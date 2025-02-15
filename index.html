@@ -87,7 +87,7 @@
     .dropdown-toggle::after { 
       margin-left: .255em; 
     }
-    /* Дополнительные стили для мобильного меню */
+    /* Дополнительные стили для мобильного меню (гамбургер-меню уже включено Bootstrap) */
     @media (max-width: 768px) {
       .navbar-collapse {
         background-color: #000;
@@ -321,6 +321,26 @@
       .section-title { font-size: 1.8rem; }
       .ticker-line { font-size: 1rem; }
     }
+    
+    /* Мобильное меню для смены языка (отображается только на телефонах) */
+    @media (max-width: 768px) {
+      #mobile-language-menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        padding: 5px 0;
+        z-index: 1000;
+      }
+      #mobile-language-menu a {
+        margin: 0 10px;
+        color: #fff;
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -441,6 +461,14 @@
         </div>
       </div>
     </footer>
+  </div>
+
+  <!-- Мобильное меню для смены языка (отображается только на телефонах) -->
+  <div id="mobile-language-menu">
+    <a href="#" class="lang-option" data-lang="ru">Рус</a>
+    <a href="#" class="lang-option" data-lang="en">Eng</a>
+    <a href="#" class="lang-option" data-lang="de">Deu</a>
+    <a href="#" class="lang-option" data-lang="inv">Inv</a>
   </div>
 
   <!-- Кнопка "Back to Top" -->
@@ -601,10 +629,10 @@
         if (data && data.length) {
           var tickerText = "";
           data.forEach(function(stock, index) {
-            var link = '<a href="https://www.google.com/search?q=' + stock.symbol + '" target="_blank">'
-                     + stock.symbol + ': $' + stock.price.toFixed(2) + '</a>';
+            var link = '<a href="https://www.google.com/search?q=' + stock.symbol + '" target="_blank">' +
+                       stock.symbol + ': $' + stock.price.toFixed(2) + '</a>';
             tickerText += link;
-            if(index < data.length - 1){
+            if (index < data.length - 1) {
               tickerText += '<span class="ticker-delimiter">|</span>';
             }
           });
@@ -614,7 +642,7 @@
       });
     }
 
-    // Обработчик выбора языка
+    // Обработчик выбора языка для десктопа и мобильного меню
     $(document).on('click', '.lang-option', function(e) {
       e.preventDefault();
       var lang = $(this).data('lang');

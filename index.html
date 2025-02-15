@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-translate="title">ERIC LEBEDENKO</title>
+  <title data-translate="title">ERIC LEBEDENKO | Личный Бренд</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
   <!-- Font Awesome 6 для иконок -->
@@ -211,6 +211,10 @@
       color: #fff;
       opacity: 0.7;
     }
+    /* Стили для статуса формы */
+    #form-status {
+      margin-top: 15px;
+    }
 
     /* Footer */
     footer {
@@ -352,20 +356,22 @@
     <section id="contact" class="section">
       <div class="container">
         <h2 class="section-title" data-translate="section_contact">Контакты</h2>
-        <form>
+        <!-- Форма отправки через Formspree -->
+        <form id="contact-form" action="https://formspree.io/f/xvgzwwqz" method="POST">
           <div class="form-group">
             <label for="name" data-translate="form_name">Имя</label>
-            <input type="text" class="form-control" id="name" placeholder="Введите ваше имя" data-translate-placeholder="form_name_placeholder" />
+            <input type="text" name="name" class="form-control" id="name" placeholder="Введите ваше имя" data-translate-placeholder="form_name_placeholder" required />
           </div>
           <div class="form-group">
             <label for="email" data-translate="form_email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Введите ваш email" data-translate-placeholder="form_email_placeholder" />
+            <input type="email" name="email" class="form-control" id="email" placeholder="Введите ваш email" data-translate-placeholder="form_email_placeholder" required />
           </div>
           <div class="form-group">
             <label for="message" data-translate="form_message">Сообщение</label>
-            <textarea class="form-control" id="message" rows="4" placeholder="Ваше сообщение" data-translate-placeholder="form_message_placeholder"></textarea>
+            <textarea name="message" class="form-control" id="message" rows="4" placeholder="Ваше сообщение" data-translate-placeholder="form_message_placeholder" required></textarea>
           </div>
           <button type="submit" class="btn btn-bw" data-translate="btn_send">Отправить</button>
+          <p id="form-status"></p>
         </form>
       </div>
     </section>
@@ -380,11 +386,13 @@
       <div class="container">
         <p data-translate="footer_text">&copy; 2025 ERIC LEBEDENKO. Все права защищены.</p>
         <div class="social-icons">
-          <a href="https://x.com/eric_lebedenko" class="social-icon-x">X</a>
-          <a href="https://t.me/x101011" class="fab fa-telegram-plane"></a>
-          <a href="https://discord.gg/cFBNH69u8h" class="fab fa-discord"></a>
-          <a href="https://www.linkedin.com/in/eric-lebedenko/" class="fab fa-linkedin"></a>
-          <a href="https://www.instagram.com/eric.lebedenko/" class="fab fa-instagram"></a>
+          <a href="#" class="social-icon-x">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/X_Logo.svg" alt="X">
+          </a>
+          <a href="#" class="fab fa-telegram-plane"></a>
+          <a href="#" class="fab fa-discord"></a>
+          <a href="#" class="fab fa-linkedin"></a>
+          <a href="#" class="fab fa-instagram"></a>
         </div>
       </div>
     </footer>
@@ -410,7 +418,7 @@
     // Объект переводов, включая переводы для скрытого квеста и для немецкого языка
     var translations = { 
       ru: {
-        title: "ERIC LEBEDENKO",
+        title: "ERIC LEBEDENKO | Личный Бренд",
         nav_home: "Главная",
         nav_about: "Обо мне",
         nav_insights: "Инсайты",
@@ -437,7 +445,7 @@
         hidden_quest_btn: "Получить роль"
       },
       en: {
-        title: "ERIC LEBEDENKO",
+        title: "ERIC LEBEDENKO | Personal Brand",
         nav_home: "Home",
         nav_about: "About Me",
         nav_insights: "Insights",
@@ -464,7 +472,7 @@
         hidden_quest_btn: "Get Role"
       },
       de: {
-        title: "ERIC LEBEDENKO",
+        title: "ERIC LEBEDENKO | Persönliche Marke",
         nav_home: "Startseite",
         nav_about: "Über mich",
         nav_insights: "Einblicke",
@@ -491,7 +499,7 @@
         hidden_quest_btn: "Rolle erhalten"
       },
       inv: {
-        // ...
+        // Здесь можно добавить переводы для режима инвестора, если необходимо
       }
     };
 
@@ -659,6 +667,37 @@
     document.addEventListener('selectstart', function(e) {
       e.preventDefault();
     });
+
+    // Обработка отправки контактной формы через Fetch API (Formspree)
+    var form = document.getElementById("contact-form");
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "Спасибо за ваше сообщение!";
+          form.reset();
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+            } else {
+              status.innerHTML = "Упс! Произошла ошибка при отправке формы.";
+            }
+          });
+        }
+      }).catch(error => {
+        status.innerHTML = "Упс! Произошла ошибка при отправке формы.";
+      });
+    }
+    form.addEventListener("submit", handleSubmit);
   </script>
 </body>
 </html>

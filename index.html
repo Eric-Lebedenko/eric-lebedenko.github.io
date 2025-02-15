@@ -106,13 +106,14 @@
     }
 
     /* Тикеры (бегущие строки) */
+    /* Верхний тикер (только в режиме Investor) перемещён под навигацию */
     .ticker-line {
       width: 100%;
       overflow: hidden;
       white-space: nowrap;
       font-size: 1.5rem;
       padding: 8px 0;
-      display: none; /* Показываем только в режиме Investor */
+      display: none; /* По умолчанию скрыт, показывается только в режиме Investor */
     }
     /* Верхний тикер - красная неоновая линия */
     #ticker-top {
@@ -135,7 +136,7 @@
       background-color: red;
       box-shadow: 0 0 15px red;
     }
-    /* Делаем саму бегущую строку */
+    /* Бегущая строка */
     .ticker-line span {
       display: inline-block;
       white-space: nowrap;
@@ -146,11 +147,11 @@
       0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
     }
-    /* Стили для ссылок акций */
+    /* Ссылки акций */
     .ticker-line a {
       color: #fff;
     }
-    /* Стили для разделителя (вертикальная черта) */
+    /* Разделитель */
     .ticker-delimiter {
       display: inline-block;
       width: 20px;
@@ -217,7 +218,7 @@
       bottom: -10px;
       left: 25%;
     }
-    /* Новая секция "Платформа" */
+    /* Секция "Платформа" */
     #platform .section-title {
       margin-bottom: 40px;
     }
@@ -227,7 +228,7 @@
       /* По умолчанию белый цвет */
       color: #fff;
     }
-    /* В режиме инвестора меняем цвет платформы на красный */
+    /* Режим инвестора: меняем цвет платформы на красный */
     .investor-mode .platform-icon {
       color: red;
     }
@@ -379,11 +380,6 @@
 
   <!-- Основной контейнер с прокруткой -->
   <div id="content">
-    <!-- Тикер сверху (красная неоновая линия) -->
-    <div id="ticker-top" class="ticker-line">
-      <span></span>
-    </div>
-
     <!-- Навигация -->
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
@@ -413,6 +409,11 @@
         </div>
       </div>
     </nav>
+
+    <!-- В режиме Investor верхний тикер перемещён под навигацию -->
+    <div id="ticker-top" class="ticker-line">
+      <span></span>
+    </div>
 
     <!-- Секция Hero -->
     <section id="home" class="hero">

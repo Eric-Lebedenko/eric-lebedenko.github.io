@@ -70,8 +70,12 @@
     }
 
     /* Навигация */
-    .navbar { background-color: #000; }
-    .navbar-brand, .nav-link { color: #fff !important; }
+    .navbar { 
+      background-color: #000; 
+    }
+    .navbar-brand, .nav-link { 
+      color: #fff !important; 
+    }
     .navbar-nav .nav-link {
       transition: color 0.3s ease, transform 0.3s ease;
     }
@@ -80,7 +84,19 @@
       transform: scale(1.05);
     }
     /* Выпадающий список выбора языка */
-    .dropdown-toggle::after { margin-left: .255em; }
+    .dropdown-toggle::after { 
+      margin-left: .255em; 
+    }
+    /* Дополнительные стили для мобильного меню */
+    @media (max-width: 768px) {
+      .navbar-collapse {
+        background-color: #000;
+        padding: 10px 0;
+      }
+      .navbar-nav .nav-link {
+        padding: 10px 15px;
+      }
+    }
 
     /* Тикеры (бегущие строки) */
     .ticker-line {
@@ -438,8 +454,22 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <script>
+    // Блокировка F12 и сочетаний клавиш для открытия инструментов разработчика
+    document.addEventListener("keydown", function(e) {
+      if (e.keyCode === 123 || // F12
+          (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || // Ctrl+Shift+I или Ctrl+Shift+J
+          (e.ctrlKey && e.keyCode === 85)) { // Ctrl+U
+        e.preventDefault();
+        return false;
+      }
+    });
+
     // Глобальная переменная для текущего языка
     var currentLang = 'ru';
+    // Переменная для хранения времени последней отправки формы
+    var lastSubmissionTime = 0;
+    // Время блокировки (в мс), например, 30 секунд
+    var BLOCK_TIME = 30000;
 
     // Используем только US-акции, чтобы уложиться в лимиты бесплатного тарифа
     var investorSymbols = "GOLD,JNJ,DIA,PR,GS,BA,GD,LHX,NOC,MHPC,FOPO,SAP,DHR,AAPL,LMT,MCO,OXY,CVX,KO,BAC,AXP,TSLA,AMZN,MSFT";
@@ -663,7 +693,7 @@
       document.body.appendChild(questDiv);
       console.log('Скрытый квест активирован: ' + new Date());
       document.getElementById('discord-btn').addEventListener('click', function() {
-          window.open("https://discord.gg/cFBNH69u8h", "_blank");
+          window.open("https://discord.gg/yourinvite", "_blank");
           var overlay = document.getElementById('hidden-quest');
           if (overlay) {
               overlay.parentNode.removeChild(overlay);
@@ -697,10 +727,17 @@
       e.preventDefault();
     });
 
-    // Обработка отправки контактной формы через Fetch API (Formspree)
+    // Обработка отправки контактной формы через Fetch API (Formspree) с защитой от частых запросов (антипинг)
     var form = document.getElementById("contact-form");
     async function handleSubmit(event) {
       event.preventDefault();
+      var now = Date.now();
+      // Если с предыдущей отправки прошло меньше BLOCK_TIME, блокируем отправку
+      if(now - lastSubmissionTime < BLOCK_TIME) {
+        document.getElementById("form-status").innerHTML = "Вы слишком часто отправляете запросы. Пожалуйста, подождите немного.";
+        return;
+      }
+      lastSubmissionTime = now;
       var status = document.getElementById("form-status");
       var data = new FormData(event.target);
       fetch(event.target.action, {

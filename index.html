@@ -71,7 +71,7 @@
 
     /* Навигация */
     .navbar { 
-      background-color: #000; 
+      background-color: #000;
     }
     .navbar-brand, .nav-link { 
       color: #fff !important; 
@@ -87,14 +87,13 @@
     .dropdown-toggle::after { 
       margin-left: .255em; 
     }
-    /* Стили для кнопки гамбургер-меню */
+    /* Кнопка гамбургер-меню */
     .navbar-toggler {
       border-color: #fff;
     }
     .navbar-toggler-icon {
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
-    /* Дополнительные стили для мобильного меню */
     @media (max-width: 768px) {
       .navbar-collapse {
         background-color: #000;
@@ -106,22 +105,33 @@
     }
 
     /* Тикеры (бегущие строки) */
-    /* Верхний тикер (отображается только в режиме Investor) */
     .ticker-line {
       width: 100%;
       overflow: hidden;
       white-space: nowrap;
       font-size: 1.5rem;
       padding: 8px 0;
-      display: none; /* По умолчанию скрыт, показывается только в режиме Investor */
+      display: none; /* Показываем только в режиме Investor */
     }
-    /* Верхний тикер - красная неоновая линия */
+    /* Верхний тикер */
     #ticker-top {
       background-color: #111;
-      border: 3px solid red;
+      position: relative;
+      margin-top: 56px; /* Отступ ниже шапки */
+    }
+    /* Создаём красную неоновую полоску сверху */
+    #ticker-top::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background-color: red;
       box-shadow: 0 0 15px red;
     }
-    /* Нижний тикер - создаём только неоновую красную линию сверху */
+
+    /* Нижний тикер (уже был сделан с красной линией сверху) */
     #ticker-bottom {
       background-color: #111;
       position: relative;
@@ -136,22 +146,21 @@
       background-color: red;
       box-shadow: 0 0 15px red;
     }
-    /* Бегущая строка */
+
+    /* Анимация бегущей строки */
+    @keyframes ticker {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
     .ticker-line span {
       display: inline-block;
       white-space: nowrap;
       animation: ticker 15s linear infinite;
       transform: translateX(100%);
     }
-    @keyframes ticker {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-    /* Ссылки акций */
     .ticker-line a {
       color: #fff;
     }
-    /* Разделитель */
     .ticker-delimiter {
       display: inline-block;
       width: 20px;
@@ -202,7 +211,9 @@
     }
 
     /* Секции */
-    .section { padding: 80px 0; }
+    .section {
+      padding: 80px 0;
+    }
     .section-title {
       font-size: 2.5rem;
       margin-bottom: 20px;
@@ -218,20 +229,17 @@
       bottom: -10px;
       left: 25%;
     }
-    /* Секция "Платформа" */
-    #platform .section-title {
-      margin-bottom: 40px;
-    }
-    .platform-icon {
+
+    /* Платформа */
+    #platform .platform-icon {
       font-size: 48px;
       margin-bottom: 20px;
-      /* По умолчанию белый цвет */
       color: #fff;
     }
-    /* В режиме инвестора меняем цвет платформы на красный */
     .investor-mode .platform-icon {
       color: red;
     }
+
     #platform .platform-item {
       padding: 20px;
     }
@@ -240,7 +248,9 @@
       margin-bottom: 10px;
     }
 
-    #insights { background-color: #111; }
+    #insights {
+      background-color: #111;
+    }
     #insights p {
       font-size: 1.2rem;
       max-width: 800px;
@@ -287,7 +297,9 @@
       filter: invert(1);
       transition: filter 0.3s ease;
     }
-    .social-icon-x:hover img { filter: invert(66%); }
+    .social-icon-x:hover img {
+      filter: invert(66%);
+    }
 
     /* Кнопка Back-to-Top */
     #back-to-top {
@@ -320,7 +332,7 @@
       text-align: center;
     }
 
-    /* Медиа-запросы для адаптивности */
+    /* Медиа-запросы */
     @media (max-width: 768px) {
       .hero h1 {
         font-size: 3rem;
@@ -332,9 +344,15 @@
         padding: 8px 16px;
         font-size: 0.9rem;
       }
-      .section { padding: 60px 0; }
-      .section-title { font-size: 2rem; }
-      .ticker-line { font-size: 1.2rem; }
+      .section {
+        padding: 60px 0;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+      .ticker-line {
+        font-size: 1.2rem;
+      }
     }
     @media (max-width: 480px) {
       .hero h1 {
@@ -347,8 +365,12 @@
         padding: 6px 12px;
         font-size: 0.8rem;
       }
-      .section-title { font-size: 1.8rem; }
-      .ticker-line { font-size: 1rem; }
+      .section-title {
+        font-size: 1.8rem;
+      }
+      .ticker-line {
+        font-size: 1rem;
+      }
     }
     
     /* Мобильное меню для смены языка (отображается только на телефонах) */

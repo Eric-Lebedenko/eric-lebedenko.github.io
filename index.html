@@ -87,14 +87,14 @@
     .dropdown-toggle::after { 
       margin-left: .255em; 
     }
-    /* Стили для кнопки гамбургер-меню для мобильных устройств */
+    /* Стили для кнопки гамбургер-меню */
     .navbar-toggler {
       border-color: #fff;
     }
     .navbar-toggler-icon {
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
-    /* Дополнительные стили для мобильного меню (гамбургер-меню уже включено Bootstrap) */
+    /* Дополнительные стили для мобильного меню */
     @media (max-width: 768px) {
       .navbar-collapse {
         background-color: #000;
@@ -221,18 +221,16 @@
     #platform .section-title {
       margin-bottom: 40px;
     }
-    /* Убираем инлайн-стили с иконок, добавляем класс для платформы */
     .platform-icon {
       font-size: 48px;
       margin-bottom: 20px;
-      /* По умолчанию белый */
+      /* По умолчанию белый цвет */
       color: #fff;
     }
-    /* Если выбран режим инвестора, меняем цвет платформы на красный */
+    /* В режиме инвестора меняем цвет платформы на красный */
     .investor-mode .platform-icon {
       color: red;
     }
-    /* Контейнер для карточек платформы */
     #platform .platform-item {
       padding: 20px;
     }
@@ -258,7 +256,6 @@
       color: #fff;
       opacity: 0.7;
     }
-    /* Стили для статуса формы */
     #form-status {
       margin-top: 15px;
     }
@@ -392,7 +389,7 @@
       <div class="container">
         <a class="navbar-brand" href="#" data-translate="hero_h1">ERIC LEBEDENKO</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-          <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
@@ -729,6 +726,10 @@
       var displayText = $(this).text();
       $('#languageDropdown').data('lang-text', displayText).text(displayText);
       updateTranslations(lang);
+      // Если мобильное меню открыто, закрываем его после выбора
+      if ($('.navbar-toggler').is(':visible')) {
+        $('.navbar-collapse').collapse('hide');
+      }
     });
 
     // По умолчанию русский язык
@@ -755,6 +756,10 @@
         var targetPosition = target.position().top;
         var scrollTo = targetPosition - ((container.height() - target.outerHeight()) / 2);
         container.animate({ scrollTop: scrollTo }, 800);
+        // Если мобильное меню открыто, закрываем его
+        if ($('.navbar-toggler').is(':visible')) {
+          $('.navbar-collapse').collapse('hide');
+        }
       }
     });
     

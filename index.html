@@ -4,11 +4,22 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO метатеги (без Open Graph) -->
+    <meta name="description"
+        content="ERIC LEBEDENKO — программист, инвестор и трейдер. Эксклюзивные инсайты, платформа и проверенные стратегии для достижения финансового успеха." />
+    <meta name="keywords"
+        content="ERIC LEBEDENKO, инвестор, трейдер, программирование, инсайты, платформа, инвестиции, финансы" />
     <title data-translate="title">ERIC LEBEDENKO</title>
+
+    <!-- Preconnect для внешних ресурсов -->
+    <link rel="preconnect" href="https://stackpath.bootstrapcdn.com" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <!-- Font Awesome 6 для иконок -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         /* Общие стили (тёмный режим по умолчанию) */
         html,
@@ -48,19 +59,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        /* Выделение кнопки смены языка */
-        #languageDropdown {
-            border: 1px solid #fff;
-            padding: 5px 10px;
-            border-radius: 4px;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        #languageDropdown:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
         }
 
         .spinner {
@@ -121,6 +119,19 @@
             margin-left: .255em;
         }
 
+        /* Выделение кнопки смены языка */
+        #languageDropdown {
+            border: 1px solid #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #languageDropdown:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+        }
+
         /* Кнопка гамбургер-меню */
         .navbar-toggler {
             border-color: #fff;
@@ -148,8 +159,7 @@
             white-space: nowrap;
             font-size: 1.5rem;
             padding: 8px 0;
-            display: none;
-            /* Показываем только в режиме Investor */
+            display: block;
         }
 
         /* Верхний тикер */
@@ -157,10 +167,9 @@
             background-color: #111;
             position: relative;
             margin-top: 56px;
-            /* Отступ ниже шапки */
         }
 
-        /* Создаём красную неоновую полоску сверху */
+        /* Красная неоновая полоска по верхнему краю */
         #ticker-top::before {
             content: '';
             position: absolute;
@@ -172,7 +181,7 @@
             box-shadow: 0 0 15px red;
         }
 
-        /* Нижний тикер (уже был сделан с красной линией сверху) */
+        /* Нижний тикер */
         #ticker-bottom {
             background-color: #111;
             position: relative;
@@ -189,7 +198,6 @@
             box-shadow: 0 0 15px red;
         }
 
-        /* Анимация бегущей строки */
         @keyframes ticker {
             0% {
                 transform: translateX(100%);
@@ -294,6 +302,7 @@
             color: #fff;
         }
 
+        /* При включении Investor Mode – иконки платформы становятся красными */
         .investor-mode .platform-icon {
             color: red;
         }
@@ -450,7 +459,7 @@
             }
         }
 
-        /* Мобильное меню для смены языка (отображается только на телефонах) */
+        /* Мобильное меню для смены языка (если потребуется) */
         @media (max-width: 768px) {
             #mobile-language-menu {
                 position: fixed;
@@ -538,7 +547,9 @@
                     Получите доступ к проверенным стратегиям и эксклюзивной аналитике от лидера, меняющего правила игры.
                     Присоединяйтесь к сообществу успешных людей и будьте в числе избранных.
                 </p>
-                <a href="#platform" class="btn btn-bw" style="margin-top: 20px;" data-translate="btn_subscribe">Узнать
+                <!-- При клике всегда переходим по ссылке (открывается в новой вкладке) -->
+                <a href="https://t.me/+5h2JerY84Lo0ZWFi" target="_blank" class="btn btn-bw"
+                    data-translate="btn_subscribe" id="subscribe-btn">Узнать
                     больше</a>
             </div>
         </section>
@@ -612,7 +623,7 @@
             </div>
         </section>
 
-        <!-- Тикер снизу (с неоновой красной линией сверху) -->
+        <!-- Тикер снизу (с неоновой красной полоской сверху) -->
         <div id="ticker-bottom" class="ticker-line">
             <span></span>
         </div>
@@ -622,17 +633,17 @@
             <div class="container">
                 <p data-translate="footer_text">&copy; 2025 ERIC LEBEDENKO. Все права защищены.</p>
                 <div class="social-icons">
-                    <a href="https://x.com/eric_lebedenko" class="social-icon-x">X</a>
-                    <a href="https://t.me/x101011" class="fab fa-telegram-plane"></a>
-                    <a href="https://discord.gg/cFBNH69u8h" class="fab fa-discord"></a>
-                    <a href="https://www.linkedin.com/in/eric-lebedenko/" class="fab fa-linkedin"></a>
-                    <a href="https://www.instagram.com/eric.lebedenko/" class="fab fa-instagram"></a>
+                    <a href="https://x.com/eric_lebedenko/" target="_blank" class="social-icon-x">X</a>
+                    <a href="https://t.me/x101011/" target="_blank" class="fab fa-telegram-plane"></a>
+                    <a href="https://discord.gg/cFBNH69u8h/" target="_blank" class="fab fa-discord"></a>
+                    <a href="https://www.linkedin.com/in/eric-lebedenko/" target="_blank" class="fab fa-linkedin"></a>
+                    <a href="https://www.instagram.com/eric.lebedenko/" target="_blank" class="fab fa-instagram"></a>
                 </div>
             </div>
         </footer>
     </div>
 
-    <!-- Мобильное меню для смены языка (отображается только на телефонах) -->
+    <!-- Мобильное меню для смены языка (если потребуется) -->
     <div id="mobile-language-menu">
         <a href="#" class="lang-option" data-lang="ru">Рус</a>
         <a href="#" class="lang-option" data-lang="en">Eng</a>
@@ -647,30 +658,24 @@
 
     <!-- Скрипты -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
+    <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script defer>
         // Блокировка F12 и сочетаний клавиш для открытия инструментов разработчика
         document.addEventListener("keydown", function (e) {
-            if (e.keyCode === 123 || // F12
-                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || // Ctrl+Shift+I или Ctrl+Shift+J
-                (e.ctrlKey && e.keyCode === 85)) { // Ctrl+U
+            if (e.keyCode === 123 ||
+                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) ||
+                (e.ctrlKey && e.keyCode === 85)) {
                 e.preventDefault();
                 return false;
             }
         });
 
-        // Глобальная переменная для текущего языка
         var currentLang = 'ru';
-        // Переменная для хранения времени последней отправки формы
         var lastSubmissionTime = 0;
-        // Время блокировки (в мс), например, 30 секунд
         var BLOCK_TIME = 30000;
-
-        // Используем только US-акции, чтобы уложиться в лимиты бесплатного тарифа
         var investorSymbols = "GOLD,JNJ,DIA,PR,GS,BA,GD,LHX,NOC,MHPC,FOPO,SAP,DHR,AAPL,LMT,MCO,OXY,CVX,KO,BAC,AXP,TSLA,AMZN,MSFT";
 
-        // Объект переводов, включая переводы для скрытого квеста, платформы и для немецкого языка
         var translations = {
             ru: {
                 title: "ERIC LEBEDENKO",
@@ -682,7 +687,8 @@
                 hero_p: "Программист | Инвестор | Трейдер",
                 btn_learn: "Узнать больше",
                 section_insights: "Эксклюзивные Инсайты",
-                insights_text: "Получите доступ к проверенным стратегиям и эксклюзивной аналитике от лидера, меняющего правила игры. Присоединяйтесь к сообществу успешных людей и будьте в числе избранных.",
+                insights_text: "Получите доступ к проверенным стратегиям и эксклюзивной аналитике от лидера, меняющего правила игры.\nПрисоединяйтесь к сообществу успешных людей и будьте в числе избранных.",
+                btn_subscribe: "Приобрести доступ",
                 platform_title: "Платформа",
                 platform_value_title: "Ценности",
                 platform_value_text: "Честность и прозрачность в каждом действии.",
@@ -691,7 +697,7 @@
                 platform_partnership_title: "Партнерство",
                 platform_partnership_text: "Стратегические союзы для достижения великих целей.",
                 section_about: "Обо мне",
-                about_text: "Я ERIC LEBEDENKO – программист, инвестор и трейдер, создающий будущее с непоколебимой решимостью и вниманием к деталям. Мой путь – это искусство превращать вызовы в возможности, а риск – в стратегическое преимущество. Воплощая элегантность и строгость, я объединяю инновации цифровых технологий с проверенными финансовыми стратегиями. Добро пожаловать в мир, где традиции встречаются с инновациями, а каждый шаг продуман до совершенства.",
+                about_text: "Я ERIC LEBEDENKO – программист, инвестор и трейдер, создающий будущее с непоколебимой решимостью и вниманием к деталям.\nМой путь – это искусство превращать вызовы в возможности, а риск – в стратегическое преимущество.\nДобро пожаловать в мир, где традиции встречаются с инновациями, а каждый шаг продуман до совершенства.",
                 section_contact: "Контакты",
                 form_name: "Имя",
                 form_email: "Email",
@@ -700,7 +706,7 @@
                 form_email_placeholder: "Введите ваш email",
                 form_message_placeholder: "Ваше сообщение",
                 btn_send: "Отправить",
-                footer_text: "&copy; 2025 ERIC LEBEDENKO. Все права защищены.",
+                footer_text: "© 2025 ERIC LEBEDENKO. Все права защищены.",
                 hidden_quest_title: "Скрытый квест активирован!",
                 hidden_quest_text: "Поздравляем! Вы нашли секрет. Нажмите кнопку ниже, чтобы получить роль в Discord.",
                 hidden_quest_btn: "Получить роль"
@@ -733,7 +739,7 @@
                 form_email_placeholder: "Enter your email",
                 form_message_placeholder: "Your message",
                 btn_send: "Send",
-                footer_text: "&copy; 2025 ERIC LEBEDENKO. All rights reserved.",
+                footer_text: "© 2025 ERIC LEBEDENKO. All rights reserved.",
                 hidden_quest_title: "Hidden Quest Activated!",
                 hidden_quest_text: "Congratulations! You've discovered the secret. Click the button below to receive your Discord role.",
                 hidden_quest_btn: "Get Role"
@@ -766,7 +772,7 @@
                 form_email_placeholder: "Geben Sie Ihre Email ein",
                 form_message_placeholder: "Ihre Nachricht",
                 btn_send: "Senden",
-                footer_text: "&copy; 2025 ERIC LEBEDENKO. Alle Rechte vorbehalten.",
+                footer_text: "© 2025 ERIC LEBEDENKO. Alle Rechte vorbehalten.",
                 hidden_quest_title: "Geheimer Auftrag aktiviert!",
                 hidden_quest_text: "Glückwunsch! Sie haben das Geheimnis entdeckt. Klicken Sie auf die Schaltfläche unten, um Ihre Discord-Rolle zu erhalten.",
                 hidden_quest_btn: "Rolle erhalten"
@@ -775,11 +781,11 @@
                 title: "ERIC LEBEDENKO",
                 nav_home: "🏦 TRADING FLOOR",
                 nav_about: "📊 PORTFOLIO",
-                nav_insights: "⚡ SIGNALS",
+                nav_insights: "⚡️ SIGNALS",
                 nav_contact: "🤝 BROKERAGE",
                 hero_h1: "INVESTOR MODE",
-                hero_p: "Wall St. Wizardry & Infinite Gains",
-                btn_learn: "EXPAND HORIZONS",
+                hero_p: "Wall St. Wizardry & Infinite Gains\nМагия Уолл-Стрит & Безграничные Прибыли",
+                btn_learn: "EXPAND HORIZONS\nРАСШИРИТЬ ГОРИЗОНТЫ",
                 section_insights: "💎 EXCLUSIVE SIGNALS",
                 insights_text: "Obtain unstoppable synergy with insider-level analysis and bulletproof strategies. Join the ranks of the elite and thrive in the profit zone.\nДобейтесь неостановимой синергии с инсайдерским анализом и пуленепробиваемыми стратегиями. Вступите в ряды элиты и процветайте в зоне прибыли.",
                 btn_subscribe: "ACQUIRE ACCESS",
@@ -794,15 +800,14 @@
                 about_text: "I am ERIC LEBEDENKO – bridging algorithmic mastery and capital synergy to forge a new era of unstoppable alpha generation. Step into a realm where every move is a power play, every pivot a quantum leap. Welcome to a dimension of infinite scaling and bulletproof strategies.\nЯ ERIC LEBEDENKO – объединяю алгоритмическое мастерство и синергию капитала для создания новой эры генерации альфа. Вступите в мир, где каждое действие – ход силы, а каждый поворот – квантовый скачок.",
                 section_contact: "CONTACT",
                 footer_text: "© 2025 ERIC LEBEDENKO. ALL GAINS RESERVED.\n© 2025 ERIC LEBEDENKO. ВСЕ ДОХОДЫ ЗАЩИЩЕНЫ.",
-                hidden_quest_title: "⛓ HIDDEN QUEST ACTIVATED!\n⛓ СКРЫТЫЙ КВЕСТ АКТИВИРОВАН!",
+                hidden_quest_title: "⛓️ HIDDEN QUEST ACTIVATED!\n⛓️ СКРЫТЫЙ КВЕСТ АКТИВИРОВАН!",
                 hidden_quest_text: "Congratulations! You've discovered the secret path to unstoppable synergy. Click below to secure your role in Discord.\nПоздравляем! Вы нашли секретный путь к неостановимой синергии. Нажмите ниже, чтобы получить свою роль в Discord.",
                 hidden_quest_btn: "CLAIM ROLE"
             }
         };
 
-        // Функция обновления переводов и placeholder
         function updateTranslations(lang) {
-            currentLang = lang; // обновляем глобальный язык
+            currentLang = lang;
             $('[data-translate]').each(function () {
                 var key = $(this).attr('data-translate');
                 if (translations[lang] && translations[lang][key]) {
@@ -817,20 +822,13 @@
             });
             document.title = translations[lang].title;
             $('#languageDropdown').data('lang-text', $('#languageDropdown').text());
-
-            // Если выбран режим инвесторов, добавляем класс для изменения цвета платформы
             if (lang === 'inv') {
                 $('body').addClass('investor-mode');
-            } else {
-                $('body').removeClass('investor-mode');
-            }
-
-            // Если выбран режим инвесторов, показываем тикеры и обновляем их
-            if (lang === 'inv') {
                 $("#ticker-top, #ticker-bottom").show();
                 updateTicker();
                 window.tickerInterval = setInterval(updateTicker, 60000);
             } else {
+                $('body').removeClass('investor-mode');
                 $("#ticker-top, #ticker-bottom").hide();
                 if (window.tickerInterval) {
                     clearInterval(window.tickerInterval);
@@ -838,11 +836,10 @@
             }
         }
 
-        // Функция обновления данных для тикеров
         function updateTicker() {
             var url = "https://financialmodelingprep.com/api/v3/quote/" + investorSymbols + "?apikey=NBFgwNCFEcgqCzgHG0sOdTea4TZxhnFr";
             $.getJSON(url, function (data) {
-                console.log(data); // Для отладки
+                console.log(data);
                 if (data && data.length) {
                     var tickerText = "";
                     data.forEach(function (stock, index) {
@@ -853,32 +850,27 @@
                             tickerText += '<span class="ticker-delimiter">|</span>';
                         }
                     });
-                    // Обновляем и верхний, и нижний тикер
                     $("#ticker-top span, #ticker-bottom span").html(tickerText);
                 }
             });
         }
 
-        // Обработчик выбора языка для десктопа и мобильного меню
         $(document).on('click', '.lang-option', function (e) {
             e.preventDefault();
             var lang = $(this).data('lang');
             var displayText = $(this).text();
             $('#languageDropdown').data('lang-text', displayText).text(displayText);
             updateTranslations(lang);
-            // Если мобильное меню открыто, закрываем его после выбора
             if ($('.navbar-toggler').is(':visible')) {
                 $('.navbar-collapse').collapse('hide');
             }
         });
 
-        // По умолчанию русский язык
         $(document).ready(function () {
             updateTranslations('ru');
             $('#languageDropdown').data('lang-text', 'Русский').text('Русский');
         });
 
-        // Preloader и плавное появление контента
         $(window).on('load', function () {
             $('#preloader').fadeOut('slow', function () {
                 $(this).remove();
@@ -886,7 +878,6 @@
             });
         });
 
-        // Плавная прокрутка для всех якорных ссылок внутри #content
         $('#content a[href^="#"]').on('click', function (event) {
             if (this.hash !== '') {
                 event.preventDefault();
@@ -896,14 +887,12 @@
                 var targetPosition = target.position().top;
                 var scrollTo = targetPosition - ((container.height() - target.outerHeight()) / 2);
                 container.animate({ scrollTop: scrollTo }, 800);
-                // Если мобильное меню открыто, закрываем его
                 if ($('.navbar-toggler').is(':visible')) {
                     $('.navbar-collapse').collapse('hide');
                 }
             }
         });
 
-        // Обработчик прокрутки для #content (Back-to-Top)
         $('#content').scroll(function () {
             if ($(this).scrollTop() > 300) {
                 $('#back-to-top').fadeIn(300);
@@ -916,20 +905,22 @@
             return false;
         });
 
-        // Клик на логотип: возврат к верху
         $('.navbar-brand').on('click', function (e) {
             e.preventDefault();
             $('#content').animate({ scrollTop: 0 }, 800);
         });
 
-        // Функция для активации скрытого квеста
+        // При нажатии на кнопку "Приобрести доступ" всегда переходим по ссылке в новой вкладке
+        $(document).on('click', '#subscribe-btn', function (e) {
+            window.open("https://t.me/+5h2JerY84Lo0ZWFi", "_blank");
+            e.preventDefault();
+        });
+
         function activateHiddenQuest() {
             if (document.getElementById('hidden-quest')) return;
-            // Получаем переводы для скрытого квеста в текущем языке (fallback - ru)
             var questTitle = (translations[currentLang] && translations[currentLang].hidden_quest_title) || translations.ru.hidden_quest_title;
             var questText = (translations[currentLang] && translations[currentLang].hidden_quest_text) || translations.ru.hidden_quest_text;
             var questBtn = (translations[currentLang] && translations[currentLang].hidden_quest_btn) || translations.ru.hidden_quest_btn;
-
             var questDiv = document.createElement('div');
             questDiv.id = 'hidden-quest';
             questDiv.style.position = 'fixed';
@@ -954,7 +945,6 @@
             });
         }
 
-        // Скрытый квест (X,1,0,1,0,1,1)
         (function () {
             var secretCode = [88, 49, 48, 49, 48, 49, 49];
             var inputSequence = [];
@@ -969,7 +959,6 @@
             });
         })();
 
-        // Запрет копирования, выделения и контекстного меню
         document.addEventListener('contextmenu', function (e) {
             e.preventDefault();
         });
@@ -980,12 +969,10 @@
             e.preventDefault();
         });
 
-        // Обработка отправки контактной формы через Fetch API (Formspree) с защитой от частых запросов (антипинг)
         var form = document.getElementById("contact-form");
         async function handleSubmit(event) {
             event.preventDefault();
             var now = Date.now();
-            // Если с предыдущей отправки прошло меньше BLOCK_TIME, блокируем отправку
             if (now - lastSubmissionTime < BLOCK_TIME) {
                 document.getElementById("form-status").innerHTML = "Вы слишком часто отправляете запросы. Пожалуйста, подождите немного.";
                 return;

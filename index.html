@@ -87,6 +87,13 @@
     .dropdown-toggle::after { 
       margin-left: .255em; 
     }
+    /* Стили для кнопки гамбургер-меню для мобильных устройств */
+    .navbar-toggler {
+      border-color: #fff;
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
     /* Дополнительные стили для мобильного меню (гамбургер-меню уже включено Bootstrap) */
     @media (max-width: 768px) {
       .navbar-collapse {
@@ -210,6 +217,30 @@
       bottom: -10px;
       left: 25%;
     }
+    /* Новая секция "Платформа" */
+    #platform .section-title {
+      margin-bottom: 40px;
+    }
+    /* Убираем инлайн-стили с иконок, добавляем класс для платформы */
+    .platform-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+      /* По умолчанию белый */
+      color: #fff;
+    }
+    /* Если выбран режим инвестора, меняем цвет платформы на красный */
+    .investor-mode .platform-icon {
+      color: red;
+    }
+    /* Контейнер для карточек платформы */
+    #platform .platform-item {
+      padding: 20px;
+    }
+    #platform .platform-item h4 {
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+
     #insights { background-color: #111; }
     #insights p {
       font-size: 1.2rem;
@@ -366,8 +397,9 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a class="nav-link" href="#home" data-translate="nav_home">Главная</a></li>
-            <li class="nav-item"><a class="nav-link" href="#about" data-translate="nav_about">Обо мне</a></li>
             <li class="nav-item"><a class="nav-link" href="#insights" data-translate="nav_insights">Инсайты</a></li>
+            <li class="nav-item"><a class="nav-link" href="#platform" data-translate="platform_title">Платформа</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about" data-translate="nav_about">Обо мне</a></li>
             <li class="nav-item"><a class="nav-link" href="#contact" data-translate="nav_contact">Контакты</a></li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -390,7 +422,43 @@
       <div class="container">
         <h1 data-translate="hero_h1">ERIC LEBEDENKO</h1>
         <p data-translate="hero_p">Программист | Инвестор | Трейдер</p>
-        <a href="#about" class="btn btn-bw" data-translate="btn_learn">Узнать больше</a>
+        <a href="#insights" class="btn btn-bw" data-translate="btn_learn">Узнать больше</a>
+      </div>
+    </section>
+
+    <!-- Секция "Эксклюзивные Инсайты" -->
+    <section id="insights" class="section">
+      <div class="container text-center">
+        <h2 class="section-title" data-translate="section_insights">Эксклюзивные Инсайты</h2>
+        <p data-translate="insights_text">
+          Получите доступ к проверенным стратегиям и эксклюзивной аналитике от лидера, меняющего правила игры.
+          Присоединяйтесь к сообществу успешных людей и будьте в числе избранных.
+        </p>
+        <a href="#platform" class="btn btn-bw" style="margin-top: 20px;" data-translate="btn_subscribe">Узнать больше</a>
+      </div>
+    </section>
+
+    <!-- Секция "Платформа" -->
+    <section id="platform" class="section">
+      <div class="container text-center">
+        <h2 class="section-title" data-translate="platform_title">Платформа</h2>
+        <div class="row">
+          <div class="col-md-4 platform-item">
+            <i class="fa-solid fa-scale-balanced platform-icon"></i>
+            <h4 data-translate="platform_value_title">Ценности</h4>
+            <p data-translate="platform_value_text">Честность и прозрачность в каждом действии.</p>
+          </div>
+          <div class="col-md-4 platform-item">
+            <i class="fa-solid fa-lightbulb platform-icon"></i>
+            <h4 data-translate="platform_innovation_title">Инновации</h4>
+            <p data-translate="platform_innovation_text">Передовые технологии для создания нового будущего.</p>
+          </div>
+          <div class="col-md-4 platform-item">
+            <i class="fa-solid fa-handshake platform-icon"></i>
+            <h4 data-translate="platform_partnership_title">Партнерство</h4>
+            <p data-translate="platform_partnership_text">Стратегические союзы для достижения великих целей.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -404,18 +472,6 @@
           Воплощая элегантность и строгость, я объединяю инновации цифровых технологий с проверенными финансовыми стратегиями.
           Добро пожаловать в мир, где традиции встречаются с инновациями, а каждый шаг продуман до совершенства.
         </p>
-      </div>
-    </section>
-
-    <!-- Секция "Инсайты" -->
-    <section id="insights" class="section">
-      <div class="container text-center">
-        <h2 class="section-title" data-translate="section_insights">Эксклюзивные Инсайты</h2>
-        <p data-translate="insights_text">
-          Получите доступ к проверенным стратегиям и эксклюзивной аналитике от лидера, меняющего правила игры.
-          Присоединяйтесь к сообществу успешных людей и будьте в числе избранных.
-        </p>
-        <a href="#contact" class="btn btn-bw" style="margin-top: 20px;" data-translate="btn_subscribe">Подписаться сейчас</a>
       </div>
     </section>
 
@@ -480,7 +536,6 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
   <script>
     // Блокировка F12 и сочетаний клавиш для открытия инструментов разработчика
     document.addEventListener("keydown", function(e) {
@@ -502,7 +557,7 @@
     // Используем только US-акции, чтобы уложиться в лимиты бесплатного тарифа
     var investorSymbols = "GOLD,JNJ,DIA,PR,GS,BA,GD,LHX,NOC,MHPC,FOPO,SAP,DHR,AAPL,LMT,MCO,OXY,CVX,KO,BAC,AXP,TSLA,AMZN,MSFT";
 
-    // Объект переводов, включая переводы для скрытого квеста и для немецкого языка
+    // Объект переводов, включая переводы для скрытого квеста, платформы и для немецкого языка
     var translations = { 
       ru: {
         title: "ERIC LEBEDENKO",
@@ -513,11 +568,17 @@
         hero_h1: "ERIC LEBEDENKO",
         hero_p: "Программист | Инвестор | Трейдер",
         btn_learn: "Узнать больше",
-        section_about: "Обо мне",
-        about_text: "Я ERIC LEBEDENKO – программист, инвестор и трейдер, создающий будущее с непоколебимой решимостью и вниманием к деталям. Мой путь – это искусство превращать вызовы в возможности, а риск – в стратегическое преимущество. Воплощая элегантность и строгость, я объединяю инновации цифровых технологий с проверенными финансовыми стратегиями. Добро пожаловать в мир, где традиции встречаются с инновациями, а каждый шаг продуман до совершенства.",
         section_insights: "Эксклюзивные Инсайты",
         insights_text: "Получите доступ к проверенным стратегиям и эксклюзивной аналитике от лидера, меняющего правила игры. Присоединяйтесь к сообществу успешных людей и будьте в числе избранных.",
-        btn_subscribe: "Подписаться сейчас",
+        platform_title: "Платформа",
+        platform_value_title: "Ценности",
+        platform_value_text: "Честность и прозрачность в каждом действии.",
+        platform_innovation_title: "Инновации",
+        platform_innovation_text: "Передовые технологии для создания нового будущего.",
+        platform_partnership_title: "Партнерство",
+        platform_partnership_text: "Стратегические союзы для достижения великих целей.",
+        section_about: "Обо мне",
+        about_text: "Я ERIC LEBEDENKO – программист, инвестор и трейдер, создающий будущее с непоколебимой решимостью и вниманием к деталям. Мой путь – это искусство превращать вызовы в возможности, а риск – в стратегическое преимущество. Воплощая элегантность и строгость, я объединяю инновации цифровых технологий с проверенными финансовыми стратегиями. Добро пожаловать в мир, где традиции встречаются с инновациями, а каждый шаг продуман до совершенства.",
         section_contact: "Контакты",
         form_name: "Имя",
         form_email: "Email",
@@ -540,11 +601,17 @@
         hero_h1: "ERIC LEBEDENKO",
         hero_p: "Programmer | Investor | Trader",
         btn_learn: "Learn More",
-        section_about: "About Me",
-        about_text: "I am ERIC LEBEDENKO – a programmer, investor and trader creating the future with unwavering determination and attention to detail. My path is about turning challenges into opportunities, and risk into a strategic advantage. Combining digital innovation with proven financial strategies, welcome to a world where tradition meets innovation and every step is meticulously planned.",
         section_insights: "Exclusive Insights",
         insights_text: "Gain access to proven strategies and exclusive analytics from a game-changing leader. Join a community of successful people and be among the chosen.",
-        btn_subscribe: "Subscribe Now",
+        platform_title: "Platform",
+        platform_value_title: "Values",
+        platform_value_text: "Integrity and transparency in every action.",
+        platform_innovation_title: "Innovation",
+        platform_innovation_text: "Cutting-edge technologies for creating a new future.",
+        platform_partnership_title: "Partnership",
+        platform_partnership_text: "Strategic alliances to achieve great goals.",
+        section_about: "About Me",
+        about_text: "I am ERIC LEBEDENKO – a programmer, investor and trader creating the future with unwavering determination and attention to detail. My path is about turning challenges into opportunities, and risk into a strategic advantage. Combining digital innovation with proven financial strategies, welcome to a world where tradition meets innovation and every step is meticulously planned.",
         section_contact: "Contact",
         form_name: "Name",
         form_email: "Email",
@@ -567,11 +634,17 @@
         hero_h1: "ERIC LEBEDENKO",
         hero_p: "Programmierer | Investor | Trader",
         btn_learn: "Mehr erfahren",
-        section_about: "Über mich",
-        about_text: "Ich bin ERIC LEBEDENKO – Programmierer, Investor und Trader, der die Zukunft mit unerschütterlicher Entschlossenheit und Liebe zum Detail gestaltet. Mein Weg ist die Kunst, Herausforderungen in Chancen zu verwandeln und Risiken in strategische Vorteile umzuwandeln. Durch die Kombination digitaler Innovationen mit bewährten Finanzstrategien heiße ich Sie willkommen in einer Welt, in der Tradition auf Innovation trifft und jeder Schritt durchdacht ist.",
         section_insights: "Exklusive Einblicke",
         insights_text: "Erhalten Sie Zugang zu bewährten Strategien und exklusiven Analysen von einem Branchenführer, der die Regeln ändert. Treten Sie einer Gemeinschaft erfolgreicher Menschen bei und gehören Sie zu den Auserwählten.",
-        btn_subscribe: "Jetzt abonnieren",
+        platform_title: "Plattform",
+        platform_value_title: "Werte",
+        platform_value_text: "Integrität und Transparenz in jeder Aktion.",
+        platform_innovation_title: "Innovation",
+        platform_innovation_text: "Modernste Technologien zur Schaffung einer neuen Zukunft.",
+        platform_partnership_title: "Partnerschaft",
+        platform_partnership_text: "Strategische Allianzen zur Erreichung großer Ziele.",
+        section_about: "Über mich",
+        about_text: "Ich bin ERIC LEBEDENKO – Programmierer, Investor und Trader, der die Zukunft mit unerschütterlicher Entschlossenheit und Liebe zum Detail gestaltet. Mein Weg ist die Kunst, Herausforderungen in Chancen zu verwandeln und Risiken in strategische Vorteile umzuwandeln. Durch die Kombination digitaler Innovationen mit bewährten Finanzstrategien heiße ich Sie willkommen in einer Welt, in der Tradition auf Innovation trifft und jeder Schritt durchdacht ist.",
         section_contact: "Kontakt",
         form_name: "Name",
         form_email: "Email",
@@ -607,6 +680,13 @@
       });
       document.title = translations[lang].title;
       $('#languageDropdown').data('lang-text', $('#languageDropdown').text());
+      
+      // Если выбран режим инвесторов, добавляем класс для изменения цвета платформы
+      if (lang === 'inv') {
+        $('body').addClass('investor-mode');
+      } else {
+        $('body').removeClass('investor-mode');
+      }
       
       // Если выбран режим инвесторов, показываем тикеры и обновляем их
       if (lang === 'inv') {

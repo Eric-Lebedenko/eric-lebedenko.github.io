@@ -18,7 +18,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <!-- Font Awesome 6 для иконок -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
         /* Общие стили (тёмный режим по умолчанию) */
@@ -500,8 +500,6 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link" href="#home" data-translate="nav_home">Главная</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#insights"
-                                data-translate="nav_insights">Инсайты</a></li>
                         <li class="nav-item"><a class="nav-link" href="#platform"
                                 data-translate="platform_title">Платформа</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about" data-translate="nav_about">Обо мне</a>
@@ -534,8 +532,8 @@
         <section id="home" class="hero">
             <div class="container">
                 <h1 data-translate="hero_h1">ERIC L. MORGAN</h1>
-                <p data-translate="hero_p">Программист | Инвестор | Трейдер</p>
-                <a href="#insights" class="btn btn-bw" data-translate="btn_learn">Узнать больше</a>
+                <p data-translate="hero_p">Программист | Инвестор | Финансовый Аналитик</p>
+                <a href="#about" class="btn btn-bw" data-translate="btn_learn">Узнать больше</a>
             </div>
         </section>
 
@@ -618,15 +616,17 @@
             <div class="container">
                 <p data-translate="footer_text">&copy; 2025 ERIC L. MORGAN. Все права защищены.</p>
                 <div class="social-icons">
-                    <a href="https://x.com/eric_lebedenko/" target="_blank" class="social-icon-x">X</a>
-                    <a href="https://t.me/x101011/" target="_blank" class="fab fa-telegram-plane"></a>
-                    <a href="https://discord.gg/cFBNH69u8h/" target="_blank" class="fab fa-discord"></a>
+                    <a href="https://x.com/realericlmorgan/" target="_blank" class="fab fa-x-twitter"></a>
+                    <a href="https://t.me/realericlmorgan/" target="_blank" class="fab fa-telegram-plane"></a>
+                    <a href="https://discord.gg/xwfAzWDByf/" target="_blank" class="fab fa-discord"></a>
                     <a href="https://www.linkedin.com/in/eric-lebedenko/" target="_blank" class="fab fa-linkedin"></a>
-                    <a href="https://www.instagram.com/eric.lebedenko/" target="_blank" class="fab fa-instagram"></a>
+                    <a href="https://www.instagram.com/realericlmorgan/" target="_blank" class="fab fa-instagram"></a>
                 </div>
             </div>
         </footer>
     </div>
+
+    <!-- END: Social Media Widgets Eric L. Morgan -->
 
     <!-- Мобильное меню для смены языка (если потребуется) -->
     <div id="mobile-language-menu">
@@ -656,7 +656,7 @@
             }
         });
 
-        var currentLang = 'ru';
+        var currentLang = 'en';
         var lastSubmissionTime = 0;
         var BLOCK_TIME = 30000;
         var investorSymbols = "GOLD,JNJ,DIA,PR,GS,BA,GD,LHX,NOC,MHPC,FOPO,SAP,DHR,AAPL,LMT,MCO,OXY,CVX,KO,BAC,AXP,TSLA,AMZN,MSFT";
@@ -669,20 +669,20 @@
                 nav_insights: "Инсайты",
                 nav_contact: "Контакты",
                 hero_h1: "ERIC L. MORGAN",
-                hero_p: "Программист | Инвестор | Трейдер",
+                hero_p: "Инвестор | Финансовый аналитик | Программист",
                 btn_learn: "Узнать больше",
                 section_insights: "Эксклюзивные Инсайты",
                 insights_text: "Получите доступ к проверенным стратегиям и эксклюзивной аналитике от лидера, меняющего правила игры.\nПрисоединяйтесь к сообществу успешных людей и будьте в числе избранных.",
                 btn_subscribe: "Приобрести доступ",
                 platform_title: "Платформа",
                 platform_value_title: "Ценности",
-                platform_value_text: "Честность и прозрачность в каждом действии.",
+                platform_value_text: "Принципы важнее выгоды. Честность и прозрачность — основа доверия и долгосрочного успеха.",
                 platform_innovation_title: "Инновации",
-                platform_innovation_text: "Передовые технологии для создания нового будущего.",
+                platform_innovation_text: "Мышление на опережение. Использую новые технологии и подходы, чтобы создавать преимущества на рынках будущего.",
                 platform_partnership_title: "Партнерство",
-                platform_partnership_text: "Стратегические союзы для достижения великих целей.",
+                platform_partnership_text: "Сотрудничество ради результата. Объединяю усилия с теми, кто мыслит масштабно и готов к большим целям.",
                 section_about: "Обо мне",
-                about_text: "Я ERIC L. MORGAN – программист, инвестор и трейдер, создающий будущее с непоколебимой решимостью и вниманием к деталям.\nМой путь – это искусство превращать вызовы в возможности, а риск – в стратегическое преимущество.\nДобро пожаловать в мир, где традиции встречаются с инновациями, а каждый шаг продуман до совершенства.",
+                about_text: "Я — ERIC L. MORGAN, инвестор и аналитик, для которого фондовый рынок — это не игра, а система, в которой побеждает рациональность и стратегия.<br>Я строю капитал на принципах стоимостного инвестирования: ищу недооценённые активы, принимаю решения хладнокровно и не гонюсь за трендами.<br><br>Мой подход — независимость мышления, глубокий анализ, строгий риск-менеджмент и личная ответственность за результат.<br>Для меня инвестиции — это дисциплина, прагматизм и умение видеть долгосрочные возможности там, где другие видят только шум.<br><br>Здесь инвестиции — это не случайность, а осознанный путь и стиль жизни, где каждый шаг выверен, а успех — закономерен.",
                 section_contact: "Контакты",
                 form_name: "Имя",
                 form_email: "Email",
@@ -703,19 +703,20 @@
                 nav_insights: "Insights",
                 nav_contact: "Contact",
                 hero_h1: "ERIC L. MORGAN",
-                hero_p: "Programmer | Investor | Trader",
+                hero_p: "Investor | Financial Analyst | Programmer",
                 btn_learn: "Learn More",
                 section_insights: "Exclusive Insights",
-                insights_text: "Gain access to proven strategies and exclusive analytics from a game-changing leader. Join a community of successful people and be among the chosen.",
+                insights_text: "Get access to proven strategies and exclusive analytics from a leader who changes the rules of the game.\nJoin a community of achievers and become one of the select few.",
+                btn_subscribe: "Get Access",
                 platform_title: "Platform",
                 platform_value_title: "Values",
-                platform_value_text: "Integrity and transparency in every action.",
+                platform_value_text: "Principles above profit. Integrity and transparency are the foundation of trust and long-term success.",
                 platform_innovation_title: "Innovation",
-                platform_innovation_text: "Cutting-edge technologies for creating a new future.",
+                platform_innovation_text: "Thinking ahead. I use new technologies and approaches to create advantages on the markets of the future.",
                 platform_partnership_title: "Partnership",
-                platform_partnership_text: "Strategic alliances to achieve great goals.",
+                platform_partnership_text: "Collaboration for results. I unite efforts with those who think big and are ready for great goals.",
                 section_about: "About Me",
-                about_text: "I am ERIC L. MORGAN – a programmer, investor and trader creating the future with unwavering determination and attention to detail. My path is about turning challenges into opportunities, and risk into a strategic advantage. Combining digital innovation with proven financial strategies, welcome to a world where tradition meets innovation and every step is meticulously planned.",
+                about_text: "I am ERIC L. MORGAN, an investor and analyst who sees the stock market not as a game, but as a system where rationality and strategy win.<br>I build capital on the principles of value investing: searching for undervalued assets, making decisions cold-bloodedly and never chasing trends.<br><br>My approach is independent thinking, deep analysis, strict risk management, and personal responsibility for results.<br>For me, investing means discipline, pragmatism, and the ability to see long-term opportunities where others see only noise.<br><br>Here, investing is not luck, but a conscious path and a lifestyle, where every step is measured and success is no accident.",
                 section_contact: "Contact",
                 form_name: "Name",
                 form_email: "Email",
@@ -726,9 +727,10 @@
                 btn_send: "Send",
                 footer_text: "© 2025 ERIC L. MORGAN. All rights reserved.",
                 hidden_quest_title: "Hidden Quest Activated!",
-                hidden_quest_text: "Congratulations! You've discovered the secret. Click the button below to receive your Discord role.",
+                hidden_quest_text: "Congratulations! You've found the secret. Click the button below to get your Discord role.",
                 hidden_quest_btn: "Get Role"
             },
+
             de: {
                 title: "ERIC L. MORGAN",
                 nav_home: "Startseite",
@@ -736,32 +738,34 @@
                 nav_insights: "Einblicke",
                 nav_contact: "Kontakt",
                 hero_h1: "ERIC L. MORGAN",
-                hero_p: "Programmierer | Investor | Trader",
+                hero_p: "Investor | Finanzanalyst | Programmierer",
                 btn_learn: "Mehr erfahren",
                 section_insights: "Exklusive Einblicke",
-                insights_text: "Erhalten Sie Zugang zu bewährten Strategien und exklusiven Analysen von einem Branchenführer, der die Regeln ändert. Treten Sie einer Gemeinschaft erfolgreicher Menschen bei und gehören Sie zu den Auserwählten.",
+                insights_text: "Erhalten Sie Zugang zu bewährten Strategien und exklusiven Analysen von einem Leader, der die Spielregeln neu definiert.\nWerden Sie Teil einer Community von Erfolgreichen und gehören Sie zu den Auserwählten.",
+                btn_subscribe: "Zugang erhalten",
                 platform_title: "Plattform",
                 platform_value_title: "Werte",
-                platform_value_text: "Integrität und Transparenz in jeder Aktion.",
+                platform_value_text: "Prinzipien vor Profit. Integrität und Transparenz sind die Grundlage für Vertrauen und langfristigen Erfolg.",
                 platform_innovation_title: "Innovation",
-                platform_innovation_text: "Modernste Technologien zur Schaffung einer neuen Zukunft.",
+                platform_innovation_text: "Vorausschauendes Denken. Ich nutze neue Technologien und Ansätze, um Vorteile auf den Märkten der Zukunft zu schaffen.",
                 platform_partnership_title: "Partnerschaft",
-                platform_partnership_text: "Strategische Allianzen zur Erreichung großer Ziele.",
+                platform_partnership_text: "Zusammenarbeit für Ergebnisse. Ich vereine Kräfte mit Menschen, die groß denken und bereit sind für große Ziele.",
                 section_about: "Über mich",
-                about_text: "Ich bin ERIC L. MORGAN – Programmierer, Investor und Trader, der die Zukunft mit unerschütterlicher Entschlossenheit und Liebe zum Detail gestaltet. Mein Weg ist die Kunst, Herausforderungen in Chancen zu verwandeln und Risiken in strategische Vorteile umzuwandeln. Durch die Kombination digitaler Innovationen mit bewährten Finanzstrategien heiße ich Sie willkommen in einer Welt, in der Tradition auf Innovation trifft und jeder Schritt durchdacht ist.",
+                about_text: "Ich bin ERIC L. MORGAN, Investor und Analyst, für den der Aktienmarkt kein Spiel ist, sondern ein System, in dem Rationalität und Strategie gewinnen.<br>Ich baue Kapital nach den Prinzipien des Value Investing auf: Ich suche unterbewertete Assets, treffe Entscheidungen mit klarem Kopf und renne keinen Trends hinterher.<br><br>Mein Ansatz ist unabhängiges Denken, tiefgehende Analyse, konsequentes Risikomanagement und persönliche Verantwortung für das Ergebnis.<br>Für mich bedeuten Investments Disziplin, Pragmatismus und die Fähigkeit, langfristige Chancen zu erkennen, wo andere nur Lärm sehen.<br><br>Hier sind Investitionen kein Zufall, sondern ein bewusster Weg und Lebensstil, bei dem jeder Schritt überlegt ist und Erfolg kein Zufall ist.",
                 section_contact: "Kontakt",
                 form_name: "Name",
-                form_email: "Email",
+                form_email: "E-Mail",
                 form_message: "Nachricht",
                 form_name_placeholder: "Geben Sie Ihren Namen ein",
-                form_email_placeholder: "Geben Sie Ihre Email ein",
+                form_email_placeholder: "Geben Sie Ihre E-Mail ein",
                 form_message_placeholder: "Ihre Nachricht",
                 btn_send: "Senden",
                 footer_text: "© 2025 ERIC L. MORGAN. Alle Rechte vorbehalten.",
-                hidden_quest_title: "Geheimer Auftrag aktiviert!",
-                hidden_quest_text: "Glückwunsch! Sie haben das Geheimnis entdeckt. Klicken Sie auf die Schaltfläche unten, um Ihre Discord-Rolle zu erhalten.",
+                hidden_quest_title: "Geheime Quest aktiviert!",
+                hidden_quest_text: "Glückwunsch! Sie haben das Geheimnis entdeckt. Klicken Sie unten, um Ihre Discord-Rolle zu erhalten.",
                 hidden_quest_btn: "Rolle erhalten"
             },
+
             inv: {
                 title: "ERIC L. MORGAN",
                 nav_home: "🏦 TRADING FLOOR",
@@ -852,9 +856,10 @@
         });
 
         $(document).ready(function () {
-            updateTranslations('ru');
-            $('#languageDropdown').data('lang-text', 'Русский').text('Русский');
+            updateTranslations('en');
+            $('#languageDropdown').data('lang-text', 'English').text('English');
         });
+
 
         $(window).on('load', function () {
             $('#preloader').fadeOut('slow', function () {
@@ -922,7 +927,7 @@
             document.body.appendChild(questDiv);
             console.log('Скрытый квест активирован: ' + new Date());
             document.getElementById('discord-btn').addEventListener('click', function () {
-                window.open("https://discord.gg/yourinvite", "_blank");
+                window.open("https://discord.gg/xwfAzWDByf", "_blank");
                 var overlay = document.getElementById('hidden-quest');
                 if (overlay) {
                     overlay.parentNode.removeChild(overlay);

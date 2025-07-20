@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- === SEO & MULTILINGUAL META === -->
     <!-- По умолчанию (русский, но подходят и для всего сайта) -->
-    <meta name="keywords"
+    <meta name="keywords" land="ru"
         content="ERIC L. MORGAN, Эрик Лебеденко, Erik Lebedenko, Eric Lebedenko, Эрик Морган, Erik Morgan, Eric Morgan, инвестор, финансовый аналитик, трейдер, программирование, инвестиции, финансы, платформа, инсайты, партнерство, аналитика, фондовый рынок, капитал, бизнес, лидерство, Eric Lebedenko, Eric Morgan, Eric L. Morgan, eric-lebedenko.github.io" />
-    <meta name="description"
+    <meta name="description" lang="ru"
         content="Официальный сайт Эрика Лебеденко (ERIC L. MORGAN): эксклюзивные инвестиционные инсайты, финансовая аналитика, платформа, проверенные стратегии, партнёрство и личный бренд. Присоединяйтесь к сообществу профессионалов рынка капитала!" />
 
     <!-- ENGLISH VERSION -->
-    <meta name="keywords" lang="en"
+    <meta name="keywords"
         content="ERIC L. MORGAN, Erik Lebedenko, Eric Lebedenko, Eric Morgan, Erik Morgan, investor, financial analyst, trader, programming, investments, finance, platform, insights, partnership, analytics, stock market, capital, business, leadership, Eric Lebedenko, Eric Morgan, Eric L. Morgan, eric-lebedenko.github.io" />
-    <meta name="description" lang="en"
+    <meta name="description"
         content="Official website of Erik Lebedenko (ERIC L. MORGAN): exclusive investment insights, financial analytics, proven strategies, platform, partnership, and personal brand. Join the professional capital market community!" />
 
     <!-- DEUTSCHE VERSION -->
@@ -33,26 +33,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://eric-lebedenko.github.io/" />
     <meta property="og:image" content="https://eric-lebedenko.github.io/og-image.jpg" />
-        <!-- STRUCTURED DATA -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Эрик Лебеденко",
-      "alternateName": "Eric L. Morgan",
-      "url": "https://ericmorgan.com",
-      "sameAs": [
-        "https://www.linkedin.com/in/eric-lebedenko",
-        "https://github.com/Eric-Lebedenko",
-        "https://t.me/realericlmorgan"
-      ],
-      "jobTitle": "Финансовый аналитик, инвестор, программист",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "DVAG"
-      }
-    }
-    </script>
+
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
@@ -68,7 +49,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <!--Logo-->
     <link rel="icon" href="logo.png" type="image/png">
-    
+
     <style>
         /* Общие стили (тёмный режим по умолчанию) */
         html,
@@ -528,8 +509,63 @@
                 font-size: 1rem;
             }
         }
+
+        .card.bg-dark {
+            background-color: #1b1b1b !important;
+            /* чисто чёрный */
+            border: 1px solid #222;
+            /* можно чуть светлее для контраста */
+        }
     </style>
 </head>
+<div id="social-popup" style="display:none; position:fixed; bottom:30px; right:30px; z-index:2000;">
+    <div
+        style="background:#18191a; border-radius:16px; box-shadow:0 8px 32px #000b; color:#fff; padding:24px 32px 22px 32px; min-width:300px; max-width:360px; position:relative; font-family:Arial,sans-serif;">
+        <button onclick="document.getElementById('social-popup').style.display='none';"
+            style="position:absolute; top:14px; right:16px; background:none; border:none; color:#fff; font-size:22px; cursor:pointer;">×</button>
+        <div data-translate="popup_title" style="font-weight:700;font-size:1.23rem; margin-bottom:14px;">
+            Будем на связи — добавляйтесь в соцсети!
+        </div>
+
+        <!-- LinkedIn -->
+        <div style="display:flex; align-items:center; margin-bottom:18px;">
+            <img src="https://media.licdn.com/dms/image/v2/D4E03AQF8DERhlGj_FA/profile-displayphoto-scale_200_200/B4EZfkVZ5pHYAc-/0/1751882512705?e=1755734400&v=beta&t=CdRWBsAjxqyecNKkv9DLT3uz_SV6xYhGilKxy6WM-Hk" alt="Eric L. Morgan LinkedIn"
+                style="width:50px;height:50px;border-radius:50%;margin-right:13px;">
+            <div>
+                <div data-translate="popup_linkedin_title" style="font-weight:600;">LinkedIn</div>
+                <div data-translate="popup_linkedin_sub" style="font-size:0.96rem; color:#b8b8b8;">Строю сеть инвесторов
+                    и партнёров</div>
+                <a href="https://www.linkedin.com/in/eric-lebedenko/" target="_blank"
+                    style="display:inline-block;margin-top:7px;background:#0a66c2;color:#fff;padding:6px 14px;border-radius:5px;text-decoration:none;font-weight:600;font-size:0.99rem;"
+                    data-translate="popup_linkedin_btn">
+                    Перейти в LinkedIn
+                </a>
+            </div>
+        </div>
+
+        <!-- X (Twitter) -->
+        <div style="display:flex; align-items:center;">
+            <img src="https://media.licdn.com/dms/image/v2/D4E03AQF8DERhlGj_FA/profile-displayphoto-scale_200_200/B4EZfkVZ5pHYAc-/0/1751882512705?e=1755734400&v=beta&t=CdRWBsAjxqyecNKkv9DLT3uz_SV6xYhGilKxy6WM-Hk" alt="Eric L. Morgan X" style="width:50px;height:50px;border-radius:50%;margin-right:13px;">
+            <div>
+                <div data-translate="popup_x_title" style="font-weight:600;">X (Twitter)</div>
+                <div data-translate="popup_x_sub" style="font-size:0.96rem; color:#b8b8b8;">Ещё больше инсайтов и
+                    инвестиционных идей</div>
+                <a href="https://x.com/realericlmorgan" target="_blank"
+                    style="display:inline-block;margin-top:7px;background:#222;color:#fff;padding:6px 14px;border-radius:5px;text-decoration:none;font-weight:600;font-size:0.99rem;"
+                    data-translate="popup_x_btn">
+                    Читать в X
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    setTimeout(function () {
+        document.getElementById('social-popup').style.display = 'block';
+    }, 11000); // 20 секунд, можешь поменять на 15000 или 30000
+</script>
+
 
 <body>
     <!-- Preloader -->
@@ -555,11 +591,11 @@
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#contact"
                                 data-translate="nav_contact">Контакты</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Русский
-                            </a>
+                        <li class="nav-item"><a class="nav-link" href="#documents"
+                                data-translate="nav_documents">Документы</a></li>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="languageDropdown"
+                                role="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">Русский</a>
                             <div class="dropdown-menu" aria-labelledby="languageDropdown">
                                 <a class="dropdown-item lang-option" href="#" data-lang="ru">Русский</a>
                                 <a class="dropdown-item lang-option" href="#" data-lang="en">English</a>
@@ -627,7 +663,73 @@
                 </p>
             </div>
         </section>
-        
+
+        <!-- Секция "Документы" -->
+        <section id="documents" class="section" style="background-color: #000000;">
+            <div class="container">
+                <h2 class="section-title">Документы</h2>
+                <div class="row">
+                    <!-- Investment Philosophy -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card bg-dark text-white h-100">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fa-solid fa-book-open"></i> <span
+                                        data-translate="doc_investphilosophy">Инвестиционная философия</span></h5>
+                                <p class="card-text" data-translate="doc_investphilosophy_desc">Принципы отбора активов,
+                                    ...</p>
+                                <a href="Investment Philosophy 2025 by ELM.pdf" target="_blank" class="btn btn-bw"
+                                    data-translate="btn_download_pdf">
+                                    Скачать PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Portfolio Performance -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card bg-dark text-white h-100">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fa-solid fa-chart-line"></i> <span
+                                        data-translate="doc_performance">Доходность портфеля</span></h5>
+                                <p class="card-text" data-translate="doc_performance_desc">Актуальная статистика, ...
+                                </p>
+                                <a href="Docs/" target="_blank" class="btn btn-bw" data-translate="btn_download_pdf">
+                                    Скачать PDF
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- One-Pager / Pitch -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card bg-dark text-white h-100">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fa-solid fa-briefcase"></i> <span
+                                        data-translate="doc_onepager">One-Pager / Pitch</span></h5>
+                                <p class="card-text" data-translate="doc_onepager_desc">Краткая презентация ...</p>
+                                <a href="One Pager by ELM 2025.pdf" target="_blank" class="btn btn-bw"
+                                    data-translate="btn_download_pdf">
+                                    Скачать PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Disclaimer / Юридическая информация -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card bg-dark text-white h-100">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fa-solid fa-gavel"></i> <span
+                                        data-translate="doc_disclaimer">Disclaimer</span></h5>
+                                <p class="card-text" data-translate="doc_disclaimer_desc">Правовая информация ...</p>
+                                <a href="Disclaimer by ELM 2025.pdf" target="_blank" class="btn btn-bw"
+                                    data-translate="btn_download_pdf">
+                                    Скачать PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Секция "Контакты" -->
         <section id="contact" class="section">
@@ -745,7 +847,25 @@
                 footer_text: "© 2025 ERIC L. MORGAN. Все права защищены.",
                 hidden_quest_title: "Скрытый квест активирован!",
                 hidden_quest_text: "Поздравляем! Вы нашли секрет. Нажмите кнопку ниже, чтобы получить роль в Discord.",
-                hidden_quest_btn: "Получить роль"
+                hidden_quest_btn: "Получить роль",
+                section_documents: "Документы",
+                doc_investphilosophy: "Инвестиционная философия",
+                doc_investphilosophy_desc: "Принципы отбора активов, долгосрочная стратегия и подход к управлению рисками. Для тех, кто ценит прозрачность и фундаментальный анализ.",
+                doc_performance: "Доходность портфеля",
+                doc_performance_desc: "Актуальная статистика, годовая динамика, структура портфеля и ключевые результаты (без раскрытия персональных данных и сумм).",
+                doc_onepager: "One-Pager / Pitch",
+                doc_onepager_desc: "Краткая презентация для потенциальных инвесторов и партнёров: структура, цели, возможности для сотрудничества.",
+                doc_disclaimer: "Disclaimer",
+                doc_disclaimer_desc: "Правовая информация и условия использования материалов сайта и аналитики. Для вашего спокойствия и прозрачности.",
+                btn_download_pdf: "Скачать PDF",
+                popup_title: "Будем на связи — добавляйтесь в соцсети!",
+                popup_linkedin_title: "LinkedIn",
+                popup_linkedin_sub: "Строю сеть инвесторов и партнёров",
+                popup_linkedin_btn: "Перейти в LinkedIn",
+                popup_x_title: "X (Twitter)",
+                popup_x_sub: "Ещё больше инсайтов и инвестиционных идей",
+                popup_x_btn: "Читать в X",
+                nav_documents: "Документы"
             },
             en: {
                 title: "ERIC L. MORGAN",
@@ -779,7 +899,25 @@
                 footer_text: "© 2025 ERIC L. MORGAN. All rights reserved.",
                 hidden_quest_title: "Hidden Quest Activated!",
                 hidden_quest_text: "Congratulations! You've found the secret. Click the button below to get your Discord role.",
-                hidden_quest_btn: "Get Role"
+                hidden_quest_btn: "Get Role",
+                section_documents: "Documents",
+                doc_investphilosophy: "Investment Philosophy",
+                doc_investphilosophy_desc: "Principles of asset selection, long-term strategy, and risk management. For those who value transparency and fundamental analysis.",
+                doc_performance: "Portfolio Performance",
+                doc_performance_desc: "Latest statistics, annual dynamics, portfolio structure, and key results (without disclosing personal data or amounts).",
+                doc_onepager: "One-Pager / Pitch",
+                doc_onepager_desc: "Brief presentation for potential investors and partners: structure, goals, opportunities for cooperation.",
+                doc_disclaimer: "Disclaimer",
+                doc_disclaimer_desc: "Legal information and terms of use for website materials and analytics. For your peace of mind and transparency.",
+                btn_download_pdf: "Download PDF",
+                popup_title: "Let's stay connected — join me on social media!",
+                popup_linkedin_title: "LinkedIn",
+                popup_linkedin_sub: "Building a network of investors and partners",
+                popup_linkedin_btn: "Go to LinkedIn",
+                popup_x_title: "X (Twitter)",
+                popup_x_sub: "More insights and investment ideas",
+                popup_x_btn: "Follow on X",
+                nav_documents: "Documents"
             },
 
             de: {
@@ -814,7 +952,25 @@
                 footer_text: "© 2025 ERIC L. MORGAN. Alle Rechte vorbehalten.",
                 hidden_quest_title: "Geheime Quest aktiviert!",
                 hidden_quest_text: "Glückwunsch! Sie haben das Geheimnis entdeckt. Klicken Sie unten, um Ihre Discord-Rolle zu erhalten.",
-                hidden_quest_btn: "Rolle erhalten"
+                hidden_quest_btn: "Rolle erhalten",
+                section_documents: "Dokumente",
+                doc_investphilosophy: "Investmentphilosophie",
+                doc_investphilosophy_desc: "Grundsätze der Asset-Auswahl, langfristige Strategie und Risikomanagement. Für alle, die Transparenz und Fundamentalanalyse schätzen.",
+                doc_performance: "Portfolioperformance",
+                doc_performance_desc: "Aktuelle Statistiken, jährliche Dynamik, Portfoliostruktur und Schlüsselergebnisse (ohne Offenlegung persönlicher Daten oder Beträge).",
+                doc_onepager: "One-Pager / Pitch",
+                doc_onepager_desc: "Kurze Präsentation für potenzielle Investoren und Partner: Struktur, Ziele, Kooperationsmöglichkeiten.",
+                doc_disclaimer: "Disclaimer",
+                doc_disclaimer_desc: "Rechtliche Informationen und Nutzungsbedingungen für Website-Materialien und Analysen. Für Ihre Sicherheit und Transparenz.",
+                btn_download_pdf: "PDF herunterladen",
+                popup_title: "Bleiben wir in Kontakt — jetzt in sozialen Netzwerken!",
+                popup_linkedin_title: "LinkedIn",
+                popup_linkedin_sub: "Aufbau eines Netzwerks aus Investoren und Partnern",
+                popup_linkedin_btn: "Zu LinkedIn",
+                popup_x_title: "X (Twitter)",
+                popup_x_sub: "Noch mehr Einblicke und Investmentideen",
+                popup_x_btn: "Auf X folgen",
+                nav_documents: "Dokumente"
             },
 
             inv: {
@@ -842,7 +998,25 @@
                 footer_text: "© 2025 ERIC L. MORGAN. ALL GAINS RESERVED.\n© 2025 ERIC L. MORGAN. ВСЕ ДОХОДЫ ЗАЩИЩЕНЫ.",
                 hidden_quest_title: "⛓️ HIDDEN QUEST ACTIVATED!\n⛓️ СКРЫТЫЙ КВЕСТ АКТИВИРОВАН!",
                 hidden_quest_text: "Congratulations! You've discovered the secret path to unstoppable synergy. Click below to secure your role in Discord.\nПоздравляем! Вы нашли секретный путь к неостановимой синергии. Нажмите ниже, чтобы получить свою роль в Discord.",
-                hidden_quest_btn: "CLAIM ROLE"
+                hidden_quest_btn: "CLAIM ROLE",
+                section_documents: "Documents",
+                doc_investphilosophy: "Investment Philosophy",
+                doc_investphilosophy_desc: "Principles of asset selection, long-term strategy, and risk management. For those who value transparency and fundamental analysis.",
+                doc_performance: "Portfolio Performance",
+                doc_performance_desc: "Latest statistics, annual dynamics, portfolio structure, and key results (without disclosing personal data or amounts).",
+                doc_onepager: "One-Pager / Pitch",
+                doc_onepager_desc: "Brief presentation for potential investors and partners: structure, goals, opportunities for cooperation.",
+                doc_disclaimer: "Disclaimer",
+                doc_disclaimer_desc: "Legal information and terms of use for website materials and analytics. For your peace of mind and transparency.",
+                btn_download_pdf: "Download PDF",
+                popup_title: "Будем на связи — добавляйтесь в соцсети!",
+                popup_linkedin_title: "LinkedIn",
+                popup_linkedin_sub: "Строю сеть инвесторов и партнёров",
+                popup_linkedin_btn: "Перейти в LinkedIn",
+                popup_x_title: "X (Twitter)",
+                popup_x_sub: "Ещё больше инсайтов и инвестиционных идей",
+                popup_x_btn: "Читать в X",
+                nav_documents: "Dokuments"
             }
         };
 
@@ -951,12 +1125,6 @@
             $('#content').animate({ scrollTop: 0 }, 800);
         });
 
-        // При нажатии на кнопку "Приобрести доступ" всегда переходим по ссылке в новой вкладке
-        $(document).on('click', '#subscribe-btn', function (e) {
-            window.open("https://t.me/+5h2JerY84Lo0ZWFi", "_blank");
-            e.preventDefault();
-        });
-
         function activateHiddenQuest() {
             if (document.getElementById('hidden-quest')) return;
             var questTitle = (translations[currentLang] && translations[currentLang].hidden_quest_title) || translations.ru.hidden_quest_title;
@@ -1047,5 +1215,4 @@
         form.addEventListener("submit", handleSubmit);
     </script>
 </body>
-
 </html>

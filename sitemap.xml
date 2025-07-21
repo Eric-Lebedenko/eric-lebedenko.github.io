@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Главная -->
   <url>
     <loc>https://ericlmorgan.com/</loc>
     <lastmod>2025-07-21</lastmod>
     <priority>1.0</priority>
   </url>
-
-  <!-- Основные секции -->
   <url>
     <loc>https://ericlmorgan.com/#platform</loc>
     <lastmod>2025-07-21</lastmod>
@@ -30,7 +27,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- PDF документы (пусть индексируются) -->
+  <!-- PDF-файлы -->
   <url>
     <loc>https://ericlmorgan.com/Docs/Investment%20Philosophy%202025%20by%20ELM.pdf</loc>
     <lastmod>2025-07-21</lastmod>
@@ -45,28 +42,6 @@
     <loc>https://ericlmorgan.com/Docs/Disclaimer%20by%20ELM%202025.pdf</loc>
     <lastmod>2025-07-21</lastmod>
     <priority>0.5</priority>
-  </url>
-
-  <!-- Соцсети (Google индексирует внешние профили тоже) -->
-  <url>
-    <loc>https://x.com/realericlmorgan</loc>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://www.linkedin.com/in/eric-lebedenko/</loc>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://t.me/realericlmorgan/</loc>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://www.instagram.com/realericlmorgan/</loc>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://discord.gg/xwfAzWDByf/</loc>
-    <priority>0.2</priority>
   </url>
 
 </urlset>

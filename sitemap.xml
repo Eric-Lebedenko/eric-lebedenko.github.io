@@ -1,47 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
     <loc>https://ericlmorgan.com/</loc>
-    <lastmod>2025-07-21</lastmod>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://ericlmorgan.com/#platform</loc>
-    <lastmod>2025-07-21</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ericlmorgan.com/#about</loc>
-    <lastmod>2025-07-21</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ericlmorgan.com/#documents</loc>
-    <lastmod>2025-07-21</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ericlmorgan.com/#contact</loc>
-    <lastmod>2025-07-21</lastmod>
-    <priority>0.8</priority>
-  </url>
 
-  <!-- PDF-файлы -->
+  <!-- PDF files -->
   <url>
-    <loc>https://ericlmorgan.com/Docs/Investment%20Philosophy%202025%20by%20ELM.pdf</loc>
-    <lastmod>2025-07-21</lastmod>
+    <loc>https://ericlmorgan.com/Investment%20Philosophy%202025%20by%20ELM.pdf</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ericlmorgan.com/Docs/One%20Pager%20by%20ELM%202025.pdf</loc>
-    <lastmod>2025-07-21</lastmod>
+    <loc>https://ericlmorgan.com/One%20Pager%20by%20ELM%202025.pdf</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ericlmorgan.com/Docs/Disclaimer%20by%20ELM%202025.pdf</loc>
-    <lastmod>2025-07-21</lastmod>
+    <loc>https://ericlmorgan.com/Disclaimer%20by%20ELM%202025.pdf</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
-
 </urlset>

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Host: ericlmorgan.com
+Sitemap: https://ericlmorgan.com/sitemap.xml

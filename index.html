@@ -1,957 +1,646 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- === SEO META === -->
-    <title>Eric L. Morgan | Personal Website</title>
+    <title>Eric Lebedenko | Ausbildung IT</title>
     <meta name="description"
-        content="Personal website of Eric L. Morgan: investments, IT systems, finance, and strategic execution." />
+        content="Persoenliche IT-Visitenkarte von Eric Lebedenko. Bewerbung fuer eine Ausbildung im IT-Bereich in Deutschland." />
     <meta name="keywords"
-        content="Eric L. Morgan, investor, IT systems, finance, strategy, capital, technology" />
-    <meta name="author" content="Eric L. Morgan" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="theme-color" content="#000000" />
+        content="Eric Lebedenko, Ausbildung IT, Fachinformatiker, IT Bewerbung, Junior IT, Germany" />
+    <meta name="author" content="Eric Lebedenko" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0f172a" />
 
-    <!-- CANONICAL -->
     <link rel="canonical" href="https://ericlmorgan.com/" />
-    <link rel="alternate" href="https://ericlmorgan.com/" hreflang="x-default" />
+    <link rel="icon" href="/logo.png" type="image/png" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Eric L. Morgan | Personal Website" />
-    <meta property="og:description"
-        content="Personal website focused on investments, IT systems, and finance." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ericlmorgan.com/" />
-    <meta property="og:site_name" content="Eric L. Morgan" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Eric Lebedenko | Ausbildung IT" />
+    <meta property="og:description"
+        content="Bewerbung fuer eine Ausbildung im IT-Bereich: Profil, Skills, Projekte und Kontakt." />
     <meta property="og:image" content="https://ericlmorgan.com/logo.png" />
-    <meta property="og:image:alt" content="Eric L. Morgan logo" />
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Eric L. Morgan | Personal Website" />
+    <meta name="twitter:title" content="Eric Lebedenko | Ausbildung IT" />
     <meta name="twitter:description"
-        content="Personal website focused on investments, IT systems, and finance." />
+        content="Bewerbung fuer eine Ausbildung im IT-Bereich: Profil, Skills, Projekte und Kontakt." />
     <meta name="twitter:image" content="https://ericlmorgan.com/logo.png" />
-    <meta name="twitter:image:alt" content="Eric L. Morgan logo" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
 
-    <!-- END SEO META -->
-
-    <!-- Preconnect для внешних ресурсов -->
-    <link rel="preconnect" href="https://stackpath.bootstrapcdn.com" />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <!-- Font Awesome 6 для иконок -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <!--Logo-->
-    <link rel="icon" href="logo.png" type="image/png">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Eric L. Morgan",
-      "jobTitle": "Investor, IT & Finance Specialist",
-      "alternateName": ["Эрик Лебеденко", "Erik Lebedenko", "Eric Lebedenko", "Erik Morgan", "Eric Morgan"],
+      "name": "Eric Lebedenko",
+      "alternateName": ["Eric L. Morgan", "Erik Lebedenko", "Эрик Лебеденко"],
       "url": "https://ericlmorgan.com/",
+      "jobTitle": "Bewerber fuer Ausbildung im IT-Bereich",
       "sameAs": [
-        "https://x.com/realericlmorgan",
         "https://www.linkedin.com/in/eric-lebedenko/",
         "https://t.me/realericlmorgan/",
-        "https://www.instagram.com/realericlmorgan/"
-      ],
-      "image": "https://ericlmorgan.com/logo.png",
-      "description": "Personal website of Eric L. Morgan with focus on investments, IT systems, and finance."
+        "https://github.com/Eric-Lebedenko"
+      ]
     }
     </script>
+
     <style>
-        /* Общие стили (тёмный режим по умолчанию) */
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-            background-color: #000;
-            user-select: none;
-            /* Запрет выделения текста */
+        :root {
+            --bg: #090c13;
+            --bg-soft: #121826;
+            --card: rgba(18, 24, 38, 0.8);
+            --text: #e6edf7;
+            --muted: #a3b0c5;
+            --line: rgba(163, 176, 197, 0.24);
+            --accent: #34d399;
+            --accent-2: #0ea5e9;
+            --shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+            --radius: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            color: #fff;
-            font-family: Arial, sans-serif;
+            margin: 0;
+            font-family: "Space Grotesk", sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at 10% 0%, rgba(14, 165, 233, 0.22), transparent 42%),
+                radial-gradient(circle at 90% 5%, rgba(52, 211, 153, 0.20), transparent 40%),
+                linear-gradient(155deg, var(--bg) 0%, #06090f 55%, #101728 100%);
+            min-height: 100vh;
         }
 
         a {
-            color: #fff;
+            color: inherit;
             text-decoration: none;
         }
 
-        a:hover {
-            text-decoration: none;
-        }
-
-        /* Preloader */
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #000;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .spinner {
-            width: 60px;
-            height: 60px;
-            border: 6px solid #fff;
-            border-top-color: #E5E4E2;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Основной контейнер с собственной прокруткой */
-        #content {
-            height: 100%;
-            overflow-y: auto;
-            opacity: 0;
-            transition: opacity 1.5s ease-out;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        #content::-webkit-scrollbar {
-            width: 0px;
-            background: transparent;
-        }
-
-        /* Навигация */
-        .navbar {
-            background-color: #000;
-        }
-
-        .navbar-brand,
-        .nav-link {
-            color: #fff !important;
-        }
-
-        .navbar-nav .nav-link {
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: #E5E4E2;
-            transform: scale(1.05);
-        }
-
-        /* Выпадающий список выбора языка */
-        .dropdown-toggle::after {
-            margin-left: .255em;
-        }
-
-        /* Выделение кнопки смены языка */
-        #languageDropdown {
-            border: 1px solid #fff;
-            padding: 5px 10px;
-            border-radius: 4px;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        #languageDropdown:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
-        }
-
-        /* Кнопка гамбургер-меню */
-        .navbar-toggler {
-            border-color: #fff;
-        }
-
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-        }
-
-        @media (max-width: 768px) {
-            .navbar-collapse {
-                background-color: #000;
-                padding: 10px 0;
-            }
-
-            .navbar-nav .nav-link {
-                padding: 10px 15px;
-            }
-        }
-
-        /* Секция Hero */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            flex-direction: column;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            opacity: 0;
-            transform: translateY(50px);
-            animation: fadeInUp 1s forwards;
-            animation-delay: 0.5s;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
-        }
-
-        .btn-bw {
-            background-color: transparent;
-            border: 2px solid #fff;
-            color: #fff;
-            padding: 10px 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-        }
-
-        .btn-bw:hover {
-            background-color: #E5E4E2;
-            color: #000;
-            transform: scale(1.05);
-        }
-
-        /* Секции */
-        .section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 2px;
-            background-color: #fff;
-            bottom: -10px;
-            left: 25%;
-        }
-
-        /* Платформа */
-        #platform .platform-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-
-        #platform .platform-item {
-            padding: 20px;
-        }
-
-        #platform .platform-item h4 {
-            margin-top: 15px;
-            margin-bottom: 10px;
-        }
-
-        #insights {
-            background-color: #111;
-        }
-
-        #insights p {
-            font-size: 1.2rem;
-            max-width: 800px;
+        .container {
+            width: min(1100px, 92%);
             margin: 0 auto;
         }
 
-        /* Контактная форма */
-        .form-control {
-            background-color: #000;
-            color: #fff;
-            border: 1px solid #fff;
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(14px);
+            background: rgba(9, 12, 19, 0.75);
+            border-bottom: 1px solid var(--line);
         }
 
-        .form-control::placeholder {
-            color: #fff;
-            opacity: 0.7;
+        .header-inner {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
         }
 
-        #form-status {
-            margin-top: 15px;
+        .brand {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 2px;
         }
 
-        /* Footer */
-        footer {
-            background-color: #000;
-            text-align: center;
-            padding: 20px 0;
+        .brand strong {
+            font-size: 1rem;
+            letter-spacing: 0.04em;
         }
 
-        .social-icons {
-            margin-top: 20px;
+        .brand span {
+            font-family: "IBM Plex Mono", monospace;
+            color: var(--muted);
+            font-size: 0.74rem;
         }
 
-        .social-icons a {
-            margin: 0 10px;
-            font-size: 24px;
-            color: #fff;
-            transition: transform 0.3s ease, color 0.3s ease;
+        .menu-toggle {
+            display: none;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: transparent;
+            color: var(--text);
+            padding: 8px 10px;
+            font: inherit;
+            cursor: pointer;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .nav a {
+            font-size: 0.94rem;
+            color: var(--muted);
+            transition: color 0.2s ease;
+        }
+
+        .nav a:hover {
+            color: var(--text);
+        }
+
+        .hero {
+            padding: 86px 0 52px;
+        }
+
+        .hero-card {
+            background: linear-gradient(145deg, rgba(18, 24, 38, 0.95), rgba(12, 17, 28, 0.82));
+            border: 1px solid var(--line);
+            border-radius: 26px;
+            box-shadow: var(--shadow);
+            padding: 40px clamp(20px, 4vw, 42px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent, rgba(52, 211, 153, 0.08), transparent 58%);
+            pointer-events: none;
+        }
+
+        .badge {
+            display: inline-block;
+            font-family: "IBM Plex Mono", monospace;
+            font-size: 0.76rem;
+            letter-spacing: 0.03em;
+            border: 1px solid rgba(52, 211, 153, 0.45);
+            color: #8cf7cd;
+            border-radius: 999px;
+            padding: 8px 14px;
+            margin-bottom: 16px;
+            background: rgba(52, 211, 153, 0.08);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2rem, 6vw, 3.4rem);
+            line-height: 1.08;
+            max-width: 17ch;
+        }
+
+        .lead {
+            margin: 18px 0 0;
+            max-width: 68ch;
+            color: var(--muted);
+            line-height: 1.65;
+            font-size: 1rem;
+        }
+
+        .hero-actions {
+            margin-top: 28px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            border: 1px solid var(--line);
+            padding: 11px 16px;
+            font-size: 0.95rem;
+            transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
-        .social-icons a:hover {
-            color: #E5E4E2;
-            transform: scale(1.2);
+        .btn:hover {
+            transform: translateY(-2px);
+            border-color: rgba(230, 237, 247, 0.45);
         }
 
-        .social-icon-x img {
-            height: 24px;
-            filter: invert(1);
-            transition: filter 0.3s ease;
+        .btn-primary {
+            background: linear-gradient(135deg, #22d3ee, #34d399);
+            color: #04210f;
+            font-weight: 700;
+            border: 0;
         }
 
-        .social-icon-x:hover img {
-            filter: invert(66%);
+        .quick-meta {
+            margin-top: 28px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
         }
 
-        /* Кнопка Back-to-Top */
-        #back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #E5E4E2;
-            color: #000;
-            border: none;
-            border-radius: 50%;
-            padding: 10px 15px;
-            font-size: 18px;
-            cursor: pointer;
-            display: none;
-            z-index: 999;
-            transition: opacity 0.3s ease;
+        .quick-meta div {
+            background: rgba(9, 12, 19, 0.66);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 10px 12px;
+            font-size: 0.88rem;
+            color: var(--muted);
         }
 
-        /* Стили для скрытого квеста */
-        #hidden-quest {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.95);
-            color: #fff;
-            padding: 30px;
-            border: 2px solid #E5E4E2;
-            z-index: 1000;
-            text-align: center;
+        section {
+            padding: 18px 0 40px;
         }
 
-        /* Медиа-запросы */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            .btn-bw {
-                padding: 8px 16px;
-                font-size: 0.9rem;
-            }
-
-            .section {
-                padding: 60px 0;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
+        h2 {
+            margin: 0 0 14px;
+            font-size: clamp(1.35rem, 2.8vw, 1.85rem);
         }
 
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .btn-bw {
-                padding: 6px 12px;
-                font-size: 0.8rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
+        .section-head {
+            margin-bottom: 18px;
         }
 
-        /* Мобильное меню для смены языка (если потребуется) */
-        @media (max-width: 768px) {
-            #mobile-language-menu {
-                position: fixed;
-                bottom: 0;
+        .section-head p {
+            margin: 0;
+            color: var(--muted);
+            max-width: 72ch;
+            line-height: 1.6;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 14px;
+        }
+
+        .card {
+            grid-column: span 4;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 18px;
+        }
+
+        .card h3 {
+            margin: 0 0 8px;
+            font-size: 1.02rem;
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.58;
+            font-size: 0.94rem;
+        }
+
+        .timeline {
+            display: grid;
+            gap: 12px;
+        }
+
+        .timeline-item {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 18px;
+        }
+
+        .timeline-item strong {
+            display: block;
+            font-size: 0.98rem;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.58;
+        }
+
+        .contact-wrap {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 14px;
+        }
+
+        .contact-list {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 18px;
+            display: grid;
+            gap: 10px;
+            align-content: start;
+        }
+
+        .contact-row {
+            border-bottom: 1px solid rgba(163, 176, 197, 0.14);
+            padding-bottom: 10px;
+            display: grid;
+            gap: 4px;
+        }
+
+        .contact-row:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .label {
+            font-family: "IBM Plex Mono", monospace;
+            font-size: 0.76rem;
+            color: var(--muted);
+        }
+
+        .contact-form {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 18px;
+        }
+
+        .field {
+            display: grid;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+
+        .field input,
+        .field textarea {
+            width: 100%;
+            border: 1px solid var(--line);
+            background: rgba(9, 12, 19, 0.8);
+            color: var(--text);
+            border-radius: 10px;
+            font: inherit;
+            padding: 11px 12px;
+        }
+
+        .field textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .form-note {
+            margin: 6px 0 0;
+            color: var(--muted);
+            font-size: 0.84rem;
+        }
+
+        footer {
+            padding: 18px 0 30px;
+            color: var(--muted);
+            font-size: 0.84rem;
+        }
+
+        @media (max-width: 980px) {
+            .card {
+                grid-column: span 6;
+            }
+
+            .contact-wrap {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .menu-toggle {
+                display: inline-flex;
+            }
+
+            .nav {
+                display: none;
+                position: absolute;
+                top: 72px;
                 left: 0;
-                width: 100%;
-                background-color: #000;
+                right: 0;
+                background: rgba(9, 12, 19, 0.98);
+                border-bottom: 1px solid var(--line);
+                padding: 14px 4%;
+                gap: 12px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav.open {
                 display: flex;
-                justify-content: center;
-                padding: 5px 0;
-                z-index: 1000;
             }
 
-            #mobile-language-menu a {
-                margin: 0 10px;
-                color: #fff;
-                font-size: 1rem;
+            .hero {
+                padding-top: 50px;
             }
-        }
 
-        .card.bg-dark {
-            background-color: #1b1b1b !important;
-            /* чисто чёрный */
-            border: 1px solid #222;
-            /* можно чуть светлее для контраста */
+            .card {
+                grid-column: span 12;
+            }
         }
     </style>
 </head>
-<div id="social-popup" style="display:none; position:fixed; bottom:30px; right:30px; z-index:2000;">
-    <div
-        style="background:#18191a; border-radius:16px; box-shadow:0 8px 32px #000b; color:#fff; padding:24px 32px 22px 32px; min-width:300px; max-width:360px; position:relative; font-family:Arial,sans-serif;">
-        <button onclick="document.getElementById('social-popup').style.display='none';"
-            style="position:absolute; top:14px; right:16px; background:none; border:none; color:#fff; font-size:22px; cursor:pointer;">×</button>
-        <div data-translate="popup_title" style="font-weight:700;font-size:1.23rem; margin-bottom:14px;">
-            Будем на связи — добавляйтесь в соцсети!
-        </div>
-
-        <!-- LinkedIn -->
-        <div style="display:flex; align-items:center; margin-bottom:18px;">
-            <img src="https://media.licdn.com/dms/image/v2/D4E35AQHv1cDkHtRbGQ/profile-framedphoto-shrink_200_200/B4EZq8MHVtGYAY-/0/1764093884044?e=1767020400&v=beta&t=1-jFlH28xl61tJQafWCrXVdHD1hocVdgyllbXMYtQqQ" alt="Eric L. Morgan LinkedIn"
-                style="width:50px;height:50px;border-radius:50%;margin-right:13px;">
-            <div>
-                <div data-translate="popup_linkedin_title" style="font-weight:600;">LinkedIn</div>
-                <div data-translate="popup_linkedin_sub" style="font-size:0.96rem; color:#b8b8b8;">Строю сеть инвесторов
-                    и партнёров</div>
-                <a href="https://www.linkedin.com/in/eric-lebedenko/" target="_blank"
-                    style="display:inline-block;margin-top:7px;background:#0a66c2;color:#fff;padding:6px 14px;border-radius:5px;text-decoration:none;font-weight:600;font-size:0.99rem;"
-                    data-translate="popup_linkedin_btn">
-                    Перейти в LinkedIn
-                </a>
-            </div>
-        </div>
-
-        <!-- X (Twitter) -->
-        <div style="display:flex; align-items:center;">
-            <img src="https://img.freepik.com/vektoren-kostenlos/neues-twitter-logo-x-symbol-auf-schwarzem-hintergrund_1017-45427.jpg?semt=ais_hybrid&w=740&q=80" alt="Eric L. Morgan X" style="width:50px;height:50px;border-radius:50%;margin-right:13px;">
-            <div>
-                <div data-translate="popup_x_title" style="font-weight:600;">X (Twitter)</div>
-                <div data-translate="popup_x_sub" style="font-size:0.96rem; color:#b8b8b8;">Ещё больше инсайтов и
-                    инвестиционных идей</div>
-                <a href="https://x.com/realericlmorgan" target="_blank"
-                    style="display:inline-block;margin-top:7px;background:#222;color:#fff;padding:6px 14px;border-radius:5px;text-decoration:none;font-weight:600;font-size:0.99rem;"
-                    data-translate="popup_x_btn">
-                    Читать в X
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    setTimeout(function () {
-        document.getElementById('social-popup').style.display = 'block';
-    }, 11000); // 20 секунд, можешь поменять на 15000 или 30000
-</script>
-
 
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="spinner"></div>
-    </div>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#top" class="brand">
+                <strong>Eric Lebedenko</strong>
+                <span>Ausbildung IT Candidate</span>
+            </a>
 
-    <!-- Основной контейнер с прокруткой -->
-    <div id="content">
-        <!-- Навигация -->
-        <nav class="navbar navbar-expand-lg fixed-top">
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">Menu</button>
+
+            <nav class="nav" id="mainNav">
+                <a href="#profil">Profil</a>
+                <a href="#skills">Skills</a>
+                <a href="#projekte">Projekte</a>
+                <a href="#ziel">Ziel</a>
+                <a href="#kontakt">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="top">
+        <section class="hero">
             <div class="container">
-                <a class="navbar-brand" href="#" data-translate="hero_h1">ERIC L. MORGAN</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" href="#home" data-translate="nav_home">Главная</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#platform"
-                                data-translate="platform_title">Платформа</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about" data-translate="nav_about">Обо мне</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="#contact"
-                                data-translate="nav_contact">Контакты</a></li>
-                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="languageDropdown"
-                                role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">Русский</a>
-                            <div class="dropdown-menu" aria-labelledby="languageDropdown">
-                                <a class="dropdown-item lang-option" href="#" data-lang="ru">Русский</a>
-                                <a class="dropdown-item lang-option" href="#" data-lang="en">English</a>
-                                <a class="dropdown-item lang-option" href="#" data-lang="de">Deutsch</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                <div class="hero-card">
+                    <span class="badge">Open for Ausbildung als Fachinformatiker (2026/2027)</span>
+                    <h1>Persoenliche Visitenkarte fuer meine IT-Ausbildung</h1>
+                    <p class="lead">
+                        Ich suche einen Ausbildungsplatz als Fachinformatiker in Deutschland, bevorzugt
+                        Anwendungsentwicklung oder Systemintegration. Schwerpunkt: praxisnahe Softwareentwicklung,
+                        sauberes Arbeiten mit modernen Tools und klare Kommunikation im Team.
+                    </p>
 
-        <!-- Секция Hero -->
-        <section id="home" class="hero">
-            <div class="container">
-                <h1 data-translate="hero_h1">ERIC L. MORGAN</h1>
-                <p data-translate="hero_p">Investing | IT Systems | Finance</p>
-                <a href="#about" class="btn btn-bw" data-translate="btn_learn">About</a>
-            </div>
-        </section>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="mailto:contact@ericlmorgan.com">Kontakt per E-Mail</a>
+                        <a class="btn" href="https://www.linkedin.com/in/eric-lebedenko/" target="_blank"
+                            rel="noopener">LinkedIn Profil</a>
+                        <a class="btn" href="https://github.com/Eric-Lebedenko" target="_blank" rel="noopener">GitHub</a>
+                    </div>
 
-        <!-- Секция "Платформа" -->
-        <section id="platform" class="section">
-            <div class="container text-center">
-                <h2 class="section-title" data-translate="platform_title">Core Competencies</h2>
-                <div class="row">
-                    <div class="col-md-4 platform-item">
-                        <i class="fa-solid fa-scale-balanced platform-icon"></i>
-                        <h4 data-translate="platform_value_title">Systems Thinking</h4>
-                        <p data-translate="platform_value_text">I design clear, maintainable, and scalable solutions.</p>
-                    </div>
-                    <div class="col-md-4 platform-item">
-                        <i class="fa-solid fa-lightbulb platform-icon"></i>
-                        <h4 data-translate="platform_innovation_title">Technical Delivery</h4>
-                        <p data-translate="platform_innovation_text">From architecture and implementation to quality checks and production deployment.
-                        </p>
-                    </div>
-                    <div class="col-md-4 platform-item">
-                        <i class="fa-solid fa-handshake platform-icon"></i>
-                        <h4 data-translate="platform_partnership_title">Team Collaboration</h4>
-                        <p data-translate="platform_partnership_text">Reliable communication, ownership, and accountable execution in cross-functional teams.
-                        </p>
+                    <div class="quick-meta">
+                        <div>Standort: Deutschland (Umzug moeglich)</div>
+                        <div>Sprachen: DE, EN, RU</div>
+                        <div>Start: Ausbildung 2026/2027</div>
+                        <div>Fokus: Webentwicklung, Automatisierung, IT-Workflows</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Секция "Обо мне" -->
-        <section id="about" class="section">
+        <section id="profil">
             <div class="container">
-                <h2 class="section-title" data-translate="section_about">About</h2>
-                <p data-translate="about_text">
-                    I am an investor and specialist at the intersection of IT systems and finance.<br><br>This website
-                    is my personal card: focus areas, operating principles, and public contacts.<br><br>I work with a
-                    structured approach, disciplined execution, and long-term strategic thinking.
-                </p>
-            </div>
-        </section>
-
-        <!-- Секция "Контакты" -->
-        <section id="contact" class="section">
-            <div class="container">
-                <h2 class="section-title" data-translate="section_contact">Contact</h2>
-                <!-- Форма отправки через Formspree -->
-                <form id="contact-form" action="https://formspree.io/f/xvgzwwqz" method="POST">
-                    <div class="form-group">
-                        <label for="name" data-translate="form_name">Имя</label>
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Введите ваше имя"
-                            data-translate-placeholder="form_name_placeholder" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="email" data-translate="form_email">Email</label>
-                        <input type="email" name="email" class="form-control" id="email" placeholder="Введите ваш email"
-                            data-translate-placeholder="form_email_placeholder" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="message" data-translate="form_message">Сообщение</label>
-                        <textarea name="message" class="form-control" id="message" rows="4" placeholder="Ваше сообщение"
-                            data-translate-placeholder="form_message_placeholder" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-bw" data-translate="btn_send">Отправить</button>
-                    <p id="form-status"></p>
-                </form>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <p data-translate="footer_text">&copy; 2025 ERIC L. MORGAN. Все права защищены.</p>
-                <p>E-mail: eric@ericlmorgan.com</p>
-                <div class="social-icons">
-                    <a href="https://x.com/realericlmorgan/" target="_blank" class="fab fa-x-twitter"></a>
-                    <a href="https://t.me/realericlmorgan/" target="_blank" class="fab fa-telegram-plane"></a>
-                    <a href="https://discord.gg/xwfAzWDByf/" target="_blank" class="fab fa-discord"></a>
-                    <a href="https://www.linkedin.com/in/eric-lebedenko/" target="_blank" class="fab fa-linkedin"></a>
-                    <a href="https://www.instagram.com/realericlmorgan/" target="_blank" class="fab fa-instagram"></a>
+                <div class="section-head">
+                    <h2>Profil</h2>
+                    <p>
+                        Ich kombiniere technisches Interesse mit strukturiertem Arbeiten. Fuer Unternehmen bringe ich
+                        Zuverlaessigkeit, schnelle Lernfaehigkeit und Motivation mit, mich in reale IT-Prozesse
+                        einzuarbeiten und Verantwortung zu uebernehmen.
+                    </p>
                 </div>
             </div>
-        </footer>
-    </div>
+        </section>
 
-    <!-- END: Social Media Widgets Eric L. Morgan -->
+        <section id="skills">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Skills & Arbeitsweise</h2>
+                    <p>Diese Punkte beschreiben, wie ich an Aufgaben herangehe und worin ich mich gezielt entwickeln moechte.</p>
+                </div>
 
-    <!-- Мобильное меню для смены языка (если потребуется) -->
-    <div id="mobile-language-menu">
-        <a href="#" class="lang-option" data-lang="ru">Рус</a>
-        <a href="#" class="lang-option" data-lang="en">Eng</a>
-        <a href="#" class="lang-option" data-lang="de">Deu</a>
-    </div>
+                <div class="grid">
+                    <article class="card">
+                        <h3>Frontend Basics</h3>
+                        <p>HTML, CSS, responsives Layout und klare Seitenstruktur fuer nutzerfreundliche Weboberflaechen.</p>
+                    </article>
+                    <article class="card">
+                        <h3>JavaScript Praxis</h3>
+                        <p>Interaktive Komponenten, Formularlogik und schrittweises Debugging mit browsernahen Tools.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Git Workflow</h3>
+                        <p>Versionskontrolle, saubere Commits und strukturiertes Arbeiten ueber Branches und Pull Requests.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Team Kommunikation</h3>
+                        <p>Direkte Abstimmung, dokumentierte Entscheidungen und konstruktives Feedback in Projekten.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Problemloesung</h3>
+                        <p>Analytischer Ansatz: Problem eingrenzen, Ursache finden, loesungsorientiert umsetzen und pruefen.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Lernfokus</h3>
+                        <p>Aktiver Ausbau in Richtung Fachinformatik: Anwendungsentwicklung, Systemintegration, IT-Sicherheit und Prozesse.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-    <!-- Кнопка "Back to Top" -->
-    <button id="back-to-top" title="Наверх">
-        <i class="fa-solid fa-chevron-up"></i>
-    </button>
+        <section id="projekte">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Projektbeispiele</h2>
+                    <p>Kompakte Beispiele aus meiner aktuellen Arbeit, die meine Entwicklung im IT-Bereich zeigen.</p>
+                </div>
 
-    <!-- Скрипты -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script defer>
-        // Блокировка F12 и сочетаний клавиш для открытия инструментов разработчика
-        document.addEventListener("keydown", function (e) {
-            if (e.keyCode === 123 ||
-                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) ||
-                (e.ctrlKey && e.keyCode === 85)) {
-                e.preventDefault();
-                return false;
-            }
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <strong>Persoenliche Website (dieses Projekt)</strong>
+                        <p>Konzeption, Design und inhaltliche Strukturierung als moderne Visitenkarte mit SEO-Basis und klarer Kommunikation fuer Recruiter.</p>
+                    </article>
+                    <article class="timeline-item">
+                        <strong>Content- und Strukturpflege</strong>
+                        <p>Regelmaessige Ueberarbeitung von Layout, Texten und Informationsarchitektur zur Verbesserung der Nutzerfuehrung auf mobilen und Desktop-Geraeten.</p>
+                    </article>
+                    <article class="timeline-item">
+                        <strong>Workflow-Denken</strong>
+                        <p>Einbindung von Formularen, Versionsverwaltung und Deployment ueber GitHub Pages als einfacher, reproduzierbarer Web-Workflow.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="ziel">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Ziel fuer die Ausbildung</h2>
+                    <p>
+                        Ich suche eine strukturierte Ausbildung als Fachinformatiker, in der ich praktisch mitarbeiten
+                        und von erfahrenen Kolleginnen und Kollegen lernen kann. Mein Ziel ist ein stabiler Einstieg in
+                        die IT mit langfristiger Perspektive im Unternehmen.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontakt">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Kontakt</h2>
+                    <p>Wenn Sie einen motivierten Auszubildenden fuer den IT-Bereich suchen, freue ich mich ueber eine Nachricht.</p>
+                </div>
+
+                <div class="contact-wrap">
+                    <div class="contact-list">
+                        <div class="contact-row">
+                            <span class="label">E-MAIL</span>
+                            <a href="mailto:contact@ericlmorgan.com">contact@ericlmorgan.com</a>
+                        </div>
+                        <div class="contact-row">
+                            <span class="label">LINKEDIN</span>
+                            <a href="https://www.linkedin.com/in/eric-lebedenko/" target="_blank" rel="noopener">linkedin.com/in/eric-lebedenko</a>
+                        </div>
+                        <div class="contact-row">
+                            <span class="label">GITHUB</span>
+                            <a href="https://github.com/Eric-Lebedenko" target="_blank" rel="noopener">github.com/Eric-Lebedenko</a>
+                        </div>
+                        <div class="contact-row">
+                            <span class="label">TELEGRAM</span>
+                            <a href="https://t.me/realericlmorgan/" target="_blank" rel="noopener">t.me/realericlmorgan</a>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" action="https://formspree.io/f/xvgzwwqz" method="POST">
+                        <div class="field">
+                            <label for="name">Name</label>
+                            <input id="name" name="name" type="text" required />
+                        </div>
+                        <div class="field">
+                            <label for="email">E-Mail</label>
+                            <input id="email" name="email" type="email" required />
+                        </div>
+                        <div class="field">
+                            <label for="message">Nachricht</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Nachricht senden</button>
+                        <p class="form-note">Antwort erfolgt in der Regel innerhalb von 24-48 Stunden.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">© <span id="year"></span> Eric Lebedenko. Ausbildung IT Visitenkarte.</div>
+    </footer>
+
+    <script>
+        const nav = document.getElementById("mainNav");
+        const menuToggle = document.getElementById("menuToggle");
+
+        menuToggle.addEventListener("click", () => {
+            nav.classList.toggle("open");
         });
 
-        var currentLang = 'en';
-        var lastSubmissionTime = 0;
-        var BLOCK_TIME = 30000;
-        var translations = {
-            ru: {
-                title: "ERIC L. MORGAN | Персональная визитка",
-                nav_home: "Главная",
-                nav_about: "Обо мне",
-                nav_insights: "Фокус",
-                nav_contact: "Контакт",
-                hero_h1: "ERIC L. MORGAN",
-                hero_p: "Инвестиции | IT-системы | Финансы",
-                btn_learn: "Обо мне",
-                section_insights: "Профессиональный фокус",
-                insights_text: "Фокус: инвестиции, IT-системы и финансовая аналитика. Подход: дисциплина, структура и долгосрочная стратегия.",
-                btn_subscribe: "Связаться",
-                platform_title: "Ключевые компетенции",
-                platform_value_title: "Системное мышление",
-                platform_value_text: "Проектирую решения так, чтобы они были понятны, поддерживаемы и масштабируемы.",
-                platform_innovation_title: "Техническая реализация",
-                platform_innovation_text: "Реализую веб- и data-задачи от архитектуры и кода до контроля качества и продакшн-внедрения.",
-                platform_partnership_title: "Командная работа",
-                platform_partnership_text: "Работаю прозрачно, соблюдаю сроки и поддерживаю конструктивную коммуникацию с коллегами и бизнесом.",
-                section_about: "Обо мне",
-                about_text: "Я инвестор и специалист на стыке IT-систем и финансов.<br><br>Этот сайт — моя персональная визитка: фокус направлений, рабочие принципы и публичные контакты.<br><br>В основе подхода: системное мышление, дисциплина исполнения и долгосрочный взгляд.",
-                section_contact: "Контакты",
-                form_name: "Имя",
-                form_email: "Email",
-                form_message: "Сообщение",
-                form_name_placeholder: "Введите ваше имя",
-                form_email_placeholder: "Введите ваш email",
-                form_message_placeholder: "Ваше сообщение",
-                btn_send: "Отправить",
-                footer_text: "© 2026 ERIC L. MORGAN. Персональная визитка.",
-                hidden_quest_title: "Скрытый квест активирован!",
-                hidden_quest_text: "Поздравляем! Вы нашли секрет. Нажмите кнопку ниже, чтобы получить роль в Discord.",
-                hidden_quest_btn: "Получить роль",
-                popup_title: "Остаёмся на связи",
-                popup_linkedin_title: "LinkedIn",
-                popup_linkedin_sub: "Профессиональная сеть и рабочие обновления",
-                popup_linkedin_btn: "Перейти в LinkedIn",
-                popup_x_title: "X (Twitter)",
-                popup_x_sub: "Заметки об инвестициях, системах и технологиях",
-                popup_x_btn: "Читать в X"
-            },
-            en: {
-                title: "Eric L. Morgan | Personal Website",
-                nav_home: "Home",
-                nav_about: "About",
-                nav_insights: "Focus",
-                nav_contact: "Contact",
-                hero_h1: "ERIC L. MORGAN",
-                hero_p: "Investing | IT Systems | Finance",
-                btn_learn: "About",
-                section_insights: "Professional Focus",
-                insights_text: "Focus areas: investments, IT systems, and financial analytics. Approach: discipline, structure, and long-term strategy.",
-                btn_subscribe: "Get in Touch",
-                platform_title: "Core Competencies",
-                platform_value_title: "Systems Thinking",
-                platform_value_text: "I design clear, maintainable, and scalable solutions.",
-                platform_innovation_title: "Technical Delivery",
-                platform_innovation_text: "From architecture and implementation to quality checks and production deployment.",
-                platform_partnership_title: "Team Collaboration",
-                platform_partnership_text: "Reliable communication, ownership, and accountable execution in cross-functional teams.",
-                section_about: "About",
-                about_text: "I am an investor and specialist at the intersection of IT systems and finance.<br><br>This website is my personal card: focus areas, operating principles, and public contacts.<br><br>I work with a structured approach, disciplined execution, and long-term strategic thinking.",
-                section_contact: "Contact",
-                form_name: "Name",
-                form_email: "Email",
-                form_message: "Message",
-                form_name_placeholder: "Enter your name",
-                form_email_placeholder: "Enter your email",
-                form_message_placeholder: "Your message",
-                btn_send: "Send",
-                footer_text: "© 2026 ERIC L. MORGAN. Personal website.",
-                hidden_quest_title: "Hidden Quest Activated!",
-                hidden_quest_text: "Congratulations! You've found the secret. Click the button below to get your Discord role.",
-                hidden_quest_btn: "Get Role",
-                popup_title: "Let's connect",
-                popup_linkedin_title: "LinkedIn",
-                popup_linkedin_sub: "Professional network and updates",
-                popup_linkedin_btn: "Go to LinkedIn",
-                popup_x_title: "X (Twitter)",
-                popup_x_sub: "Sharing notes on investing, systems, and technology",
-                popup_x_btn: "Follow on X"
-            },
-            de: {
-                title: "Eric L. Morgan | Persönliche Website",
-                nav_home: "Startseite",
-                nav_about: "Über mich",
-                nav_insights: "Fokus",
-                nav_contact: "Kontakt",
-                hero_h1: "ERIC L. MORGAN",
-                hero_p: "Investitionen | IT-Systeme | Finanzen",
-                btn_learn: "Über mich",
-                section_insights: "Beruflicher Fokus",
-                insights_text: "Schwerpunkte: Investitionen, IT-Systeme und Finanzanalyse. Ansatz: Disziplin, Struktur und langfristiges Denken.",
-                btn_subscribe: "Kontakt aufnehmen",
-                platform_title: "Kernkompetenzen",
-                platform_value_title: "Systemisches Denken",
-                platform_value_text: "Ich konzipiere Lösungen so, dass sie klar, wartbar und skalierbar bleiben.",
-                platform_innovation_title: "Technische Umsetzung",
-                platform_innovation_text: "Von Architektur und Implementierung bis zu Qualitätssicherung und produktivem Betrieb.",
-                platform_partnership_title: "Teamarbeit",
-                platform_partnership_text: "Verlässliche Kommunikation, Eigenverantwortung und saubere Zusammenarbeit mit Fach- und Technikteams.",
-                section_about: "Über mich",
-                about_text: "Ich bin Investor und Spezialist an der Schnittstelle von IT-Systemen und Finanzen.<br><br>Diese Website ist meine persönliche Visitenkarte: Schwerpunkte, Arbeitsprinzipien und öffentliche Kontakte.<br><br>Ich arbeite mit strukturiertem Vorgehen, disziplinierter Umsetzung und langfristiger Perspektive.",
-                section_contact: "Kontakt",
-                form_name: "Name",
-                form_email: "E-Mail",
-                form_message: "Nachricht",
-                form_name_placeholder: "Geben Sie Ihren Namen ein",
-                form_email_placeholder: "Geben Sie Ihre E-Mail ein",
-                form_message_placeholder: "Ihre Nachricht",
-                btn_send: "Senden",
-                footer_text: "© 2026 ERIC L. MORGAN. Persönliche Website.",
-                hidden_quest_title: "Geheime Quest aktiviert!",
-                hidden_quest_text: "Glückwunsch! Sie haben das Geheimnis entdeckt. Klicken Sie unten, um Ihre Discord-Rolle zu erhalten.",
-                hidden_quest_btn: "Rolle erhalten",
-                popup_title: "Lassen Sie uns vernetzen",
-                popup_linkedin_title: "LinkedIn",
-                popup_linkedin_sub: "Berufliches Netzwerk und aktuelle Updates",
-                popup_linkedin_btn: "Zu LinkedIn",
-                popup_x_title: "X (Twitter)",
-                popup_x_sub: "Notizen zu Investitionen, Systemen und Technologie",
-                popup_x_btn: "Auf X folgen"
-            }
-        };
-
-        function updateTranslations(lang) {
-            currentLang = lang;
-            $('[data-translate]').each(function () {
-                var key = $(this).attr('data-translate');
-                if (translations[lang] && translations[lang][key]) {
-                    $(this).html(translations[lang][key]);
-                }
-            });
-            $('[data-translate-placeholder]').each(function () {
-                var key = $(this).attr('data-translate-placeholder');
-                if (translations[lang] && translations[lang][key]) {
-                    $(this).attr('placeholder', translations[lang][key]);
-                }
-            });
-            document.title = translations[lang].title;
-            $('#languageDropdown').data('lang-text', $('#languageDropdown').text());
-        }
-
-        $(document).on('click', '.lang-option', function (e) {
-            e.preventDefault();
-            var lang = $(this).data('lang');
-            var displayText = $(this).text();
-            $('#languageDropdown').data('lang-text', displayText).text(displayText);
-            updateTranslations(lang);
-            if ($('.navbar-toggler').is(':visible')) {
-                $('.navbar-collapse').collapse('hide');
-            }
+        nav.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => nav.classList.remove("open"));
         });
 
-        $(document).ready(function () {
-            updateTranslations('en');
-            $('#languageDropdown').data('lang-text', 'English').text('English');
-        });
-
-
-        $(window).on('load', function () {
-            $('#preloader').fadeOut('slow', function () {
-                $(this).remove();
-                $('#content').css('opacity', '1');
-            });
-        });
-
-        $('#content a[href^="#"]').on('click', function (event) {
-            if (this.hash !== '') {
-                event.preventDefault();
-                var hash = this.hash;
-                var target = $(hash);
-                var container = $('#content');
-                var targetPosition = target.position().top;
-                var scrollTo = targetPosition - ((container.height() - target.outerHeight()) / 2);
-                container.animate({ scrollTop: scrollTo }, 800);
-                if ($('.navbar-toggler').is(':visible')) {
-                    $('.navbar-collapse').collapse('hide');
-                }
-            }
-        });
-
-        $('#content').scroll(function () {
-            if ($(this).scrollTop() > 300) {
-                $('#back-to-top').fadeIn(300);
-            } else {
-                $('#back-to-top').fadeOut(300);
-            }
-        });
-        $('#back-to-top').click(function () {
-            $('#content').animate({ scrollTop: 0 }, 800);
-            return false;
-        });
-
-        $('.navbar-brand').on('click', function (e) {
-            e.preventDefault();
-            $('#content').animate({ scrollTop: 0 }, 800);
-        });
-
-        function activateHiddenQuest() {
-            if (document.getElementById('hidden-quest')) return;
-            var questTitle = (translations[currentLang] && translations[currentLang].hidden_quest_title) || translations.ru.hidden_quest_title;
-            var questText = (translations[currentLang] && translations[currentLang].hidden_quest_text) || translations.ru.hidden_quest_text;
-            var questBtn = (translations[currentLang] && translations[currentLang].hidden_quest_btn) || translations.ru.hidden_quest_btn;
-            var questDiv = document.createElement('div');
-            questDiv.id = 'hidden-quest';
-            questDiv.style.position = 'fixed';
-            questDiv.style.top = '50%';
-            questDiv.style.left = '50%';
-            questDiv.style.transform = 'translate(-50%, -50%)';
-            questDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
-            questDiv.style.color = '#fff';
-            questDiv.style.padding = '30px';
-            questDiv.style.border = '2px solid #E5E4E2';
-            questDiv.style.zIndex = '1000';
-            questDiv.style.textAlign = 'center';
-            questDiv.innerHTML = '<h2>' + questTitle + '</h2><p>' + questText + '</p><br><button id="discord-btn" class="btn btn-bw" style="margin-top:20px;">' + questBtn + '</button>';
-            document.body.appendChild(questDiv);
-            console.log('Скрытый квест активирован: ' + new Date());
-            document.getElementById('discord-btn').addEventListener('click', function () {
-                window.open("https://discord.gg/xwfAzWDByf", "_blank");
-                var overlay = document.getElementById('hidden-quest');
-                if (overlay) {
-                    overlay.parentNode.removeChild(overlay);
-                }
-            });
-        }
-
-        (function () {
-            var secretCode = [88, 49, 48, 49, 48, 49, 49];
-            var inputSequence = [];
-            window.addEventListener('keydown', function (e) {
-                inputSequence.push(e.keyCode);
-                if (inputSequence.length > secretCode.length) {
-                    inputSequence.shift();
-                }
-                if (secretCode.toString() === inputSequence.toString()) {
-                    activateHiddenQuest();
-                }
-            });
-        })();
-
-        document.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
-        });
-        document.addEventListener('copy', function (e) {
-            e.preventDefault();
-        });
-        document.addEventListener('selectstart', function (e) {
-            e.preventDefault();
-        });
-
-        var form = document.getElementById("contact-form");
-        async function handleSubmit(event) {
-            event.preventDefault();
-            var now = Date.now();
-            if (now - lastSubmissionTime < BLOCK_TIME) {
-                document.getElementById("form-status").innerHTML = "Вы слишком часто отправляете запросы. Пожалуйста, подождите немного.";
-                return;
-            }
-            lastSubmissionTime = now;
-            var status = document.getElementById("form-status");
-            var data = new FormData(event.target);
-            fetch(event.target.action, {
-                method: form.method,
-                body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    status.innerHTML = "Спасибо за ваше сообщение!";
-                    form.reset();
-                } else {
-                    response.json().then(data => {
-                        if (Object.hasOwn(data, 'errors')) {
-                            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
-                        } else {
-                            status.innerHTML = "Упс! Произошла ошибка при отправке формы.";
-                        }
-                    });
-                }
-            }).catch(error => {
-                status.innerHTML = "Упс! Произошла ошибка при отправке формы.";
-            });
-        }
-        form.addEventListener("submit", handleSubmit);
+        document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
+
 </html>
-
-

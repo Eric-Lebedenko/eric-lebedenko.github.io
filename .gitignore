@@ -1,0 +1,7 @@
+node_modules
+dist
+.vite
+*.local
+*.tsbuildinfo
+npm-debug.log*
+vite-dev.*.log

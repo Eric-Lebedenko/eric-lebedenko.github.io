@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: #07101f;
+    font-family: "Inter", system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28;
+  }
+
+  .section-kicker {
+    @apply mb-5 text-xs font-semibold uppercase tracking-[0.26em] text-bronze;
+  }
+
+  .section-title {
+    @apply font-display text-3xl font-semibold leading-tight text-platinum sm:text-5xl;
+  }
+}

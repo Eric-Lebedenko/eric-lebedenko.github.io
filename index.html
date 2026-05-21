@@ -11,7 +11,7 @@
         content="Eric Lebedenko, Ausbildung IT, Fachinformatiker, IT Bewerbung, Junior IT, Germany" />
     <meta name="author" content="Eric Lebedenko" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#0f172a" />
+    <meta name="theme-color" content="#000000" />
 
     <link rel="canonical" href="https://ericlmorgan.com/" />
     <link rel="icon" href="/logo.png" type="image/png" />
@@ -53,14 +53,12 @@
 
     <style>
         :root {
-            --bg: #090c13;
-            --bg-soft: #121826;
-            --card: rgba(18, 24, 38, 0.8);
-            --text: #e6edf7;
-            --muted: #a3b0c5;
-            --line: rgba(163, 176, 197, 0.24);
-            --accent: #34d399;
-            --accent-2: #0ea5e9;
+            --bg: #000000;
+            --bg-soft: #000000;
+            --card: rgba(0, 0, 0, 0.92);
+            --text: #ffffff;
+            --muted: rgba(255, 255, 255, 0.72);
+            --line: rgba(255, 255, 255, 0.24);
             --shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
             --radius: 20px;
         }
@@ -77,10 +75,7 @@
             margin: 0;
             font-family: "Space Grotesk", sans-serif;
             color: var(--text);
-            background:
-                radial-gradient(circle at 10% 0%, rgba(14, 165, 233, 0.22), transparent 42%),
-                radial-gradient(circle at 90% 5%, rgba(52, 211, 153, 0.20), transparent 40%),
-                linear-gradient(155deg, var(--bg) 0%, #06090f 55%, #101728 100%);
+            background: var(--bg);
             min-height: 100vh;
         }
 
@@ -99,7 +94,7 @@
             top: 0;
             z-index: 10;
             backdrop-filter: blur(14px);
-            background: rgba(9, 12, 19, 0.75);
+            background: rgba(0, 0, 0, 0.92);
             border-bottom: 1px solid var(--line);
         }
 
@@ -160,7 +155,7 @@
         }
 
         .hero-card {
-            background: linear-gradient(145deg, rgba(18, 24, 38, 0.95), rgba(12, 17, 28, 0.82));
+            background: var(--card);
             border: 1px solid var(--line);
             border-radius: 26px;
             box-shadow: var(--shadow);
@@ -173,7 +168,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(120deg, transparent, rgba(52, 211, 153, 0.08), transparent 58%);
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.08), transparent 58%);
             pointer-events: none;
         }
 
@@ -182,12 +177,12 @@
             font-family: "IBM Plex Mono", monospace;
             font-size: 0.76rem;
             letter-spacing: 0.03em;
-            border: 1px solid rgba(52, 211, 153, 0.45);
-            color: #8cf7cd;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            color: #ffffff;
             border-radius: 999px;
             padding: 8px 14px;
             margin-bottom: 16px;
-            background: rgba(52, 211, 153, 0.08);
+            background: rgba(255, 255, 255, 0.08);
         }
 
         h1 {
@@ -225,14 +220,14 @@
 
         .btn:hover {
             transform: translateY(-2px);
-            border-color: rgba(230, 237, 247, 0.45);
+            border-color: rgba(255, 255, 255, 0.65);
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #22d3ee, #34d399);
-            color: #04210f;
+            background: #ffffff;
+            color: #000000;
             font-weight: 700;
-            border: 0;
+            border: 1px solid #ffffff;
         }
 
         .quick-meta {
@@ -243,7 +238,7 @@
         }
 
         .quick-meta div {
-            background: rgba(9, 12, 19, 0.66);
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--line);
             border-radius: 12px;
             padding: 10px 12px;
@@ -338,7 +333,7 @@
         }
 
         .contact-row {
-            border-bottom: 1px solid rgba(163, 176, 197, 0.14);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.14);
             padding-bottom: 10px;
             display: grid;
             gap: 4px;
@@ -372,7 +367,7 @@
         .field textarea {
             width: 100%;
             border: 1px solid var(--line);
-            background: rgba(9, 12, 19, 0.8);
+            background: rgba(0, 0, 0, 0.9);
             color: var(--text);
             border-radius: 10px;
             font: inherit;
@@ -417,7 +412,7 @@
                 top: 72px;
                 left: 0;
                 right: 0;
-                background: rgba(9, 12, 19, 0.98);
+                background: rgba(0, 0, 0, 0.98);
                 border-bottom: 1px solid var(--line);
                 padding: 14px 4%;
                 gap: 12px;

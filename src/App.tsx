@@ -38,20 +38,20 @@ const expertise = [
 
 const projects = [
   {
-    title: "Investment Philosophy 2025",
-    category: "Finance / Investing",
+    title: "Invest Morgan Bot",
+    category: "Finance / Investments / Automation",
     description:
-      "A structured document about long-term investing principles, capital allocation, and disciplined market thinking.",
-    href: "/Investment%20Philosophy%202025%20by%20ELM.pdf",
-    cta: "Open PDF",
+      "Stock and crypto portfolio tracking with real-time market monitoring, notifications, alerts, and investment accounting for 50+ monthly users.",
+    href: "https://t.me/InvestMorganBot",
+    cta: "Open Telegram",
   },
   {
-    title: "One Pager by ELM",
-    category: "Personal Brand",
+    title: "Lotiqs Bot",
+    category: "Telegram Gifts / Digital Items",
     description:
-      "A concise professional profile for introductions, networking, and finance/IT positioning.",
-    href: "/One%20Pager%20by%20ELM%202025.pdf",
-    cta: "Open PDF",
+      "Telegram Gifts market for trading, tracking, and collecting digital items. Built around practical market utility with 350+ monthly users.",
+    href: "https://t.me/lotiqsbot",
+    cta: "Open Telegram",
   },
   {
     title: "Personal Website",
@@ -68,14 +68,6 @@ const projects = [
       "Public development profile for experiments, automation tooling, and future system integration projects.",
     href: "https://github.com/Eric-Lebedenko",
     cta: "Open GitHub",
-  },
-  {
-    title: "Market Research & Analysis",
-    category: "Research",
-    description:
-      "Ongoing research direction focused on financial markets, business quality, risk, and practical analytical frameworks.",
-    href: "/Disclaimer%20by%20ELM%202025.pdf",
-    cta: "View Notes",
   },
 ];
 
@@ -244,10 +236,10 @@ function App() {
           <div className="section-kicker">Projects / Links</div>
           <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
             <div>
-              <h2 className="section-title">Selected projects and public materials.</h2>
+              <h2 className="section-title">Selected products and public projects.</h2>
               <p className="mt-5 max-w-md text-base leading-7 text-smoke">
-                A compact archive of finance, investing, IT, and personal brand materials.
-                Each item links to a live profile, repository, or public document.
+                A compact overview of live Telegram products, finance/IT automation work,
+                and public development profiles.
               </p>
             </div>
 

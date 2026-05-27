@@ -11,7 +11,7 @@
 
   body {
     margin: 0;
-    background: #07101f;
+    background: #000000;
     font-family: "Inter", system-ui, sans-serif;
   }
 }
@@ -22,7 +22,7 @@
   }
 
   .section-kicker {
-    @apply mb-5 text-xs font-semibold uppercase tracking-[0.26em] text-bronze;
+    @apply mb-5 text-xs font-semibold uppercase tracking-[0.26em] text-platinum;
   }
 
   .section-title {

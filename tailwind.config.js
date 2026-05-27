@@ -4,13 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: "#07101f",
-        graphite: "#12151b",
-        steel: "#1d2430",
-        platinum: "#f5f2ea",
-        smoke: "#b7b4aa",
-        bronze: "#b88a44",
-        gold: "#d7b46a",
+        ink: "#000000",
+        graphite: "#080808",
+        steel: "#111111",
+        platinum: "#ffffff",
+        smoke: "#b8b8b8",
       },
       fontFamily: {
         display: ["Manrope", "Inter", "system-ui", "sans-serif"],
